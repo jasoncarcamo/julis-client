@@ -7,13 +7,13 @@ export default class LogIn extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            user_name: '',
+            mobile_number: null,
             password: ''
         }
     }
 
-    handleUserName = (e)=>{
-        this.setState({user_name: e.target.value})
+    handleNumber = (e)=>{
+        this.setState({mobile_number: e.target.value})
     }
 
     handlePassword = (e)=>{
@@ -22,9 +22,9 @@ export default class LogIn extends React.Component{
 
     handleSubmit = (e)=>{
         e.preventDefault();
-        const {user_name, password} = this.state;
+        const {mobile_number, password} = this.state;
 
-        AuthService.postLogin(user_name, password).then( res => {
+        AuthService.postLogin(mobile_number, password).then( res => {
             
         });
         
@@ -40,8 +40,8 @@ export default class LogIn extends React.Component{
             <>
                 <form onSubmit={this.handleSubmit}>
                     <fieldset>
-                        <label htmlFor="user_name">Username:</label>
-                        <input type="text" id="user_name" onChange={this.handleUserName} value={this.state.user_name}></input>
+                        <label htmlFor="user_name">Mobile Number:</label>
+                        <input type="text" id="user_name" onChange={this.handleNumber} value={this.state.mobile_number}></input>
 
                         <label htmlFor="password">Password</label>
                         <input id="password" type="password" onChange={this.handlePassword} value={this.state.password}></input>
