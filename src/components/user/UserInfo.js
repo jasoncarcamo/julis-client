@@ -11,7 +11,7 @@ export default class UserInfo extends React.Component{
 
     handleSubmit = (e)=>{
         e.preventDefault();
-        return fetch('http://localhost:8000/user/3ada609b-b1ba-4f07-9df4-4f54f4101827carcamo').then(res => res.json()).then(resData => console.log(resData));
+        return fetch('http://localhost:8000/user/699b1330-6e25-41b6-a707-3095798aa1b1carcamo').then(res => res.json()).then(resData => console.log(resData));
     }
     render(){
         return (

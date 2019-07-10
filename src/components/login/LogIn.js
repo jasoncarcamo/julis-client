@@ -7,7 +7,7 @@ export default class LogIn extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            mobile_number: null,
+            mobile_number: '',
             password: ''
         }
     }
@@ -37,25 +37,19 @@ export default class LogIn extends React.Component{
 
     render(){
         return (
-            <>
-                <form onSubmit={this.handleSubmit}>
-                    <fieldset>
-                        <label htmlFor="user_name">Mobile Number:</label>
-                        <input type="text" id="user_name" onChange={this.handleNumber} value={this.state.mobile_number}></input>
+            
+            <form onSubmit={this.handleSubmit}>
+                <fieldset>
+                    <label htmlFor="user_name">Mobile Number:</label>
+                    <input type="text" id="user_name" onChange={this.handleNumber} value={this.state.mobile_number}></input>
 
-                        <label htmlFor="password">Password</label>
-                        <input id="password" type="password" onChange={this.handlePassword} value={this.state.password}></input>
+                    <label htmlFor="password">Password</label>
+                    <input id="password" type="password" onChange={this.handlePassword} value={this.state.password}></input>
 
-                        <button type="submit">Log In</button>
-                    </fieldset>
-                </form>
-                <form onSubmit={this.handleUser}>
-                    <fieldset>
-                        <input type="text" value={this.state.user_name} onChange={this.handleUserName}></input>
-                        <button type="submit">Go</button>
-                    </fieldset>
-                </form>
-            </>
+                    <button type="submit">Log In</button>
+                </fieldset>
+            </form>
+            
         )
     }
 } 

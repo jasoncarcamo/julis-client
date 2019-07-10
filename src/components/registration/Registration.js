@@ -10,14 +10,15 @@ export default class Registration extends React.Component{
            last_name: '',
            email: '' ,
            password: '',
-           home_number: null,
-           mobile_number: null,
+           home_number: '',
+           mobile_number: '',
            address: '',
            city: '',
            state_region: '',
-           zipcode: null,
+           zipcode: '',
            best_days_reached: '',
-           best_time_reached: ''
+           best_time_reached: '',
+           message: ''
         }
     }
 
@@ -71,14 +72,16 @@ export default class Registration extends React.Component{
         this.setState({ best_time_reached: e.target.value});
     }
 
-    
+    handleMessage = (e)=>{
+        this.setState({ message: e.target.value})
+    }
 
 
     handleSubmit = (e)=>{
         e.preventDefault();
 
 
-        let {first_name, last_name, email, password, home_number, mobile_number, address, city, state_region, zipcode, best_days_reached, best_time_reached} = this.state;
+        let {first_name, last_name, email, password, home_number, mobile_number, address, city, state_region, zipcode, best_days_reached, best_time_reached, message} = this.state;
 
         const profile_id = uuid4();
 
@@ -94,7 +97,8 @@ export default class Registration extends React.Component{
             state_region,
             zipcode,
             best_days_reached,
-            best_time_reached,
+            best_time_reached, 
+            message,
             id: profile_id + last_name
         }
 
@@ -144,7 +148,9 @@ export default class Registration extends React.Component{
                     <input type="text" id="reg_best_days" onChange={this.handleBestDays} value={this.state.best_days_reached}/>
 
                     <label htmlFor="reg_best_time">Best Time to be reached</label> 
-                    <input type="text" id="reg_best_days" onChange={this.handleBestTime} value={this.state.best_time_reached}/>
+                    <input type="text" id="reg_best_time" onChange={this.handleBestTime} value={this.state.best_time_reached}/>
+                    <label htmlFor="reg_message">Message:</label>
+                    <textarea type="text" id="reg_message" placeholder="Any special requests?" onChange={this.handleMessage} value={this.state.message}/>
 
 
                     <button type="submit">Sign me up</button>

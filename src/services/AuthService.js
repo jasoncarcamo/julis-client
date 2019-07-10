@@ -18,13 +18,13 @@ const AuthService = {
             
         })
     },
-    registerUser({first_name, last_name, email, password, home_number,  mobile_number, address, city, state_region, zipcode, best_days_reached, best_time_reached, id}){
+    registerUser({first_name, last_name, email, password, home_number,  mobile_number, address, city, state_region, zipcode, best_days_reached, best_time_reached, message, id}){
         return fetch('http://localhost:8000/api/register', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({first_name, last_name, email, password, home_number,  mobile_number, address, city, state_region, zipcode, best_days_reached, best_time_reached, id})
+            body: JSON.stringify({first_name, last_name, email, password, home_number,  mobile_number, address, city, state_region, zipcode, best_days_reached, best_time_reached, message, id})
         })
         .then( res => {
             if(!res.ok){
