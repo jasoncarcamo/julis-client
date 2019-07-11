@@ -28,7 +28,7 @@ export default class User extends React.Component{
         fetch(`http://localhost:8000/user/${UserService.getId()}`)
             .then( res => (!res.ok) ? res.json().then(e => Promise.reject(e)): res.json())
                 .then( resData => {
-                    console.log(resData)
+                    
                     this.setState({
                         first_name: resData.first_name,
                         last_name: resData.last_name, 
