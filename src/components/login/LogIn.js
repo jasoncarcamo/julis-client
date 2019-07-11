@@ -1,7 +1,8 @@
 import React from 'react';
 import AuthService from '../../services/AuthService';
-import { thisExpression } from '@babel/types';
-
+import TokenService from '../../services/TokenService';
+import ApiContext from '../../apiContext/ApiContext';
+import UserService from '../../services/UserService';
 
 export default class LogIn extends React.Component{
     constructor(props){
@@ -11,6 +12,8 @@ export default class LogIn extends React.Component{
             password: ''
         }
     }
+
+    static contextType = ApiContext;
 
     handleNumber = (e)=>{
         this.setState({mobile_number: e.target.value})
@@ -24,7 +27,10 @@ export default class LogIn extends React.Component{
         e.preventDefault();
         const {mobile_number, password} = this.state;
 
-        AuthService.postLogin(mobile_number, password).then( res => {
+        AuthService.postLogin(mobile_number, password).then( resData => {
+            TokenService.saveAuthToken(resData.authToken);
+            UserService.saveId(resData.id)
+            this.props.history.push(`/user/${resData.id}`)
             
         });
         

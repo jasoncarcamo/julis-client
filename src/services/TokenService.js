@@ -10,7 +10,8 @@ const TokenService = {
     },
     hasAuthToken(){
         return TokenService.getAuthToken()
-    }
+    },
+    
 };
 
 

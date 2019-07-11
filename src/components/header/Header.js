@@ -1,6 +1,7 @@
 import React from 'react';
 import TokenService from '../../services/TokenService';
 import {Link} from 'react-router-dom';
+import UserService from '../../services/UserService';
 
 
 export default class Header extends React.Component{
@@ -8,8 +9,8 @@ export default class Header extends React.Component{
     renderLogIn = ()=>{
         return (
             <ul>
-                <a href="/">Sign Up</a>
-                <a href="/"> Log In</a>
+                <Link to="/register">Sign Up</Link>
+                <Link to="/login"> Log In</Link>
             </ul>
         )
     }
@@ -17,12 +18,13 @@ export default class Header extends React.Component{
     renderLogOut = ()=>{
         return (
             <ul>
-                <a href="/" onClick={this.handleLogOut}>Log Out</a>
+                <Link to="/" onClick={this.handleLogOut}>Log Out</Link>
             </ul>
         )
     }
 
     handleLogOut = ()=>{
+        UserService.clearId();
         TokenService.clearAuthToken();
         this.props.history.push('/')
     }
@@ -31,7 +33,7 @@ export default class Header extends React.Component{
         return (
             <header>
                 <nav>
-                    <div>Logo</div>
+                    <div><Link to="/">Logo</Link></div>
 
                     {TokenService.hasAuthToken() ? this.renderLogOut() : this.renderLogIn()}
                 </nav>

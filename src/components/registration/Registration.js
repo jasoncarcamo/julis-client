@@ -1,6 +1,8 @@
 import React from 'react';
 import AuthService from '../../services/AuthService';
 import uuid4 from 'uuid/v4';
+import TokenService from '../../services/TokenService';
+import UserService from '../../services/UserService';
 
 export default class Registration extends React.Component{
     constructor(props){
@@ -103,7 +105,12 @@ export default class Registration extends React.Component{
         }
 
         
-        AuthService.registerUser(newUser);
+        AuthService.registerUser(newUser).then(res => {
+            if(res){
+                UserService.saveId(res.id);
+                this.props.history.push(`/user/${res.id}`)
+            }
+        });
 
     }
 

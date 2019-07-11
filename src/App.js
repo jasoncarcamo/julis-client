@@ -4,17 +4,44 @@ import LogIn from './components/login/LogIn';
 import Header from './components/header/Header';
 import {Route} from 'react-router-dom';
 import Registration from './components/registration/Registration';
-import UserInfo from './components/user/UserInfo';
+import User from './components/user/User';
+import ApiContext from './apiContext/ApiContext';
+import TokenService from './services/TokenService';
 
-function App() {
-  return (
-    <div className="App">
-      <Route path="/" component={Header}></Route>
-      <Route exact path="/login" component={LogIn}></Route>  
-      <Route exact path="/register" component={Registration}></Route>
-      <Route exact path="/user" component={UserInfo}></Route>
-    </div>
-  );
+export default class App extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            id: '',
+        }
+    }
+
+    componentDidMount(){
+        if(TokenService.hasAuthToken()){
+            
+        }
+    }
+
+    handleAddId = (id)=>{
+        this.setState({id});
+    }
+
+    
+    render(){
+        let value ={
+            id: this.state.id,
+            setId: this.handleAddId
+        }
+        return (
+            <ApiContext.Provider value={value}>
+                <div className="App">
+                <Route path="/" component={Header}></Route>
+                <Route exact path="/login" render={props => <LogIn {...props}/>}></Route>  
+                <Route exact path="/register" component={Registration}></Route>
+                <Route exact path="/user/:id" render={props => <User {...props} user={this.state.id}/>}></Route>
+                </div>
+            </ApiContext.Provider>
+        );
+    }
 }
 
-export default App;
