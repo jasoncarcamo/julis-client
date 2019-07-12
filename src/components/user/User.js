@@ -28,8 +28,9 @@ export default class User extends React.Component{
         fetch(`http://localhost:8000/user/${UserService.getId()}`)
             .then( res => (!res.ok) ? res.json().then(e => Promise.reject(e)): res.json())
                 .then( resData => {
-                    
+
                     this.setState({
+
                         first_name: resData.first_name,
                         last_name: resData.last_name, 
                         best_days_reach: resData.best_days_reach,
@@ -45,8 +46,9 @@ export default class User extends React.Component{
                         zipcode: resData.zipcode,
                         message: resData.message,
                         verified: resData.verified
+                        
                     })
-                    console.log(this.state);
+                   
                 });
     }
 

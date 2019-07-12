@@ -7,6 +7,8 @@ import Registration from './components/registration/Registration';
 import User from './components/user/User';
 import ApiContext from './apiContext/ApiContext';
 import TokenService from './services/TokenService';
+import Verify from './components/verify/Verify';
+import ResendVerification from './components/verify/ResendVerificaton';
 
 export default class App extends React.Component {
     constructor(props){
@@ -39,6 +41,8 @@ export default class App extends React.Component {
                 <Route exact path="/login" render={props => <LogIn {...props}/>}></Route>  
                 <Route exact path="/register" component={Registration}></Route>
                 <Route exact path="/user/:id" render={props => <User {...props} user={this.state.id}/>}></Route>
+                <Route exact path="/api/verify" component={Verify}></Route>
+                <Route exact path="/api/resend" component={ResendVerification}></Route>
                 </div>
             </ApiContext.Provider>
         );

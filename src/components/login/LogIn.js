@@ -28,9 +28,13 @@ export default class LogIn extends React.Component{
         const {mobile_number, password} = this.state;
 
         AuthService.postLogin(mobile_number, password).then( resData => {
-            TokenService.saveAuthToken(resData.authToken);
-            UserService.saveId(resData.id)
-            this.props.history.push(`/user/${resData.id}`)
+            if(resData.verified){
+                TokenService.saveAuthToken(resData.authToken);
+                UserService.saveId(resData.id)
+                this.props.history.push(`/user/${resData.id}`)
+            } else{
+                this.props.history.push(`api/resend?id=${resData.id}`)
+            }
             
         });
         

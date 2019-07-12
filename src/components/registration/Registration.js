@@ -109,9 +109,7 @@ export default class Registration extends React.Component{
         
         AuthService.registerUser(newUser).then(res => {
             if(res){
-                
-                UserService.saveId(res.id);
-                this.props.history.push(`/user/${res.id}`)
+                this.props.history.push(`/`)
             }
         });
 
