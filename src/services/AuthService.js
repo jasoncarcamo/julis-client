@@ -12,13 +12,13 @@ const AuthService = {
             return !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
         })
     },
-    registerUser({first_name, last_name, email, password, home_number,  mobile_number, address, city, state_region, zipcode, best_days_reached, best_time_reached, message, id}){
+    registerUser({first_name, last_name, email, password, home_number,  mobile_number, address, city, state_region, zipcode, id}){
         return fetch('http://localhost:8000/api/register', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({first_name, last_name, email, password, home_number,  mobile_number, address, city, state_region, zipcode, best_days_reached, best_time_reached, message, id})
+            body: JSON.stringify({first_name, last_name, email, password, home_number,  mobile_number, address, city, state_region, zipcode, id})
         })
         .then( res => {
             if(!res.ok){

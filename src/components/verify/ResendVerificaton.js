@@ -3,7 +3,6 @@ import AuthService from '../../services/AuthService';
 import queryString from 'query-string';
 
 
-
 export default class ResendVerification extends React.Component{
 
     constructor(props){
@@ -15,6 +14,18 @@ export default class ResendVerification extends React.Component{
             sent: false,
             error: ''
         }
+    }
+
+    componentDidMount(){
+        const user = queryString.parse(this.props.location.search);
+
+        fetch(`http://localhost:8000/user/${user.id}`)
+            .then( res => (!res.ok) ? res.json().then(e => Promise.reject(e)) : res.json())
+            .then(resData => {
+                if(resData.error){
+                    this.props.history.push('/register')
+                }
+            })
     }
 
     handleNumber = (e)=>{
@@ -35,7 +46,7 @@ export default class ResendVerification extends React.Component{
 
         AuthService.postLogin(this.state.mobile_number, this.state.password)
             .then( res=> {
-                console.log(res);
+    
                 this.setState({ email: res.email})
 
                 if(res){
@@ -55,11 +66,11 @@ export default class ResendVerification extends React.Component{
 
 
     render(){
-        const query = queryString.parse(this.props.location.search);
 
         return (
             <section>
-                {this.state.sent ? <h3>Please confirm email: {this.state.email}</h3> : <form onSubmit={this.handleSubmit}>
+                {this.state.sent ? <h3>Confirmation sent to email: {this.state.email}</h3> : <form onSubmit={this.handleSubmit}>
+                    <header>Your email has not been verified yet. Please type in your log in information</header>
                     <fieldset>
                         <label htmlFor="ver_email">Mobile Number:</label>
                         <input type="text" id="ver_email" onChange={this.handleNumber} value={this.state.mobile_number}></input>

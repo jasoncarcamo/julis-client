@@ -1,7 +1,5 @@
 import React from 'react';
 import queryString from 'query-string';
-import ResendVerification from './ResendVerificaton';
-
 export default class Verify extends React.Component{
     constructor(props){
         super(props);
@@ -22,7 +20,10 @@ export default class Verify extends React.Component{
         })
             .then( res=> res.json())
             .then(resData => {
+                
                 this.setState({verified: resData.verified})
+                this.props.history.push('/login')
+                
             });
 
     }

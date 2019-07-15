@@ -4,6 +4,8 @@ import TokenService from '../../services/TokenService';
 import ApiContext from '../../apiContext/ApiContext';
 import UserService from '../../services/UserService';
 
+
+
 export default class LogIn extends React.Component{
     constructor(props){
         super(props);
@@ -14,6 +16,12 @@ export default class LogIn extends React.Component{
     }
 
     static contextType = ApiContext;
+
+    componentDidMount(){
+        if(UserService.hasId()){
+            this.props.history.push('/login')
+        }
+    }
 
     handleNumber = (e)=>{
         this.setState({mobile_number: e.target.value})
@@ -28,6 +36,7 @@ export default class LogIn extends React.Component{
         const {mobile_number, password} = this.state;
 
         AuthService.postLogin(mobile_number, password).then( resData => {
+           
             if(resData.verified){
                 TokenService.saveAuthToken(resData.authToken);
                 UserService.saveId(resData.id)
@@ -50,6 +59,7 @@ export default class LogIn extends React.Component{
             
             <form onSubmit={this.handleSubmit}>
                 <fieldset>
+                    <header>Log In</header>
                     <label htmlFor="user_name">Mobile Number:</label>
                     <input type="text" id="user_name" onChange={this.handleNumber} value={this.state.mobile_number}></input>
 
