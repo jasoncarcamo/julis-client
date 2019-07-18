@@ -17,9 +17,13 @@ export default class ResendVerification extends React.Component{
     }
 
     componentDidMount(){
-        const user = queryString.parse(this.props.location.search);
-
-        fetch(`http://localhost:8000/user/${user.id}`)
+        const auth = queryString.parse(this.props.location.search);
+        
+        fetch(`http://localhost:8000/user`, {
+            headers: {
+                'authorization': `bearer ${auth.token}`
+            }
+        })
             .then( res => (!res.ok) ? res.json().then(e => Promise.reject(e)) : res.json())
             .then(resData => {
                 if(resData.error){

@@ -18,8 +18,9 @@ export default class LogIn extends React.Component{
     static contextType = ApiContext;
 
     componentDidMount(){
+
         if(UserService.hasId()){
-            this.props.history.push('/login')
+            this.props.history.push(`/user/`)
         }
     }
 
@@ -37,12 +38,16 @@ export default class LogIn extends React.Component{
 
         AuthService.postLogin(mobile_number, password).then( resData => {
            
+            if(!resData){
+                console.log(resData.error)
+                this.props.history.push('/register')
+            }
             if(resData.verified){
                 TokenService.saveAuthToken(resData.authToken);
                 UserService.saveId(resData.id)
-                this.props.history.push(`/user/${resData.id}`)
+                this.props.history.push(`/user/`)
             } else{
-                this.props.history.push(`api/resend?id=${resData.id}`)
+                this.props.history.push(`api/resend?token=${resData.authToken}`)
             }
             
         });

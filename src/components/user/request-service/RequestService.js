@@ -1,5 +1,5 @@
 import React from 'react';
-
+import TokenService from '../../../services/TokenService';
 
 
 export default class RequestService extends React.Component{
@@ -37,19 +37,22 @@ export default class RequestService extends React.Component{
 
     handleSubmit = (e)=>{
         e.preventDefault();
-        fetch('http://localhost:8000/user/bad3a8a5-2ca5-420d-85f0-8ade0c9b5936carcamo/service', {
+        
+        fetch(`http://localhost:8000/user/service`, {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`
             },
-            body: JSON.stringify({service_type: this.state.service_type, comments: this.state.comments, day: this.state.day, best_time_reached: this.state.best_time_reached, price: this.state.price, user_id: this.props.user})
+            body: JSON.stringify({service_type: this.state.service_type, comments: this.state.comments, day: this.state.day, best_time_reached: this.state.best_time_reached, price: this.state.price, user_id: this.props.user, date_modified: new Date()})
         })
         .then( res => res.json())
-        .then(resData => console.log(resData));
+        .then(resData => this.props.history.push('/user/services'));
     }
 
 
     render(){
+        
         return (
             <section>
                 <form onSubmit={this.handleSubmit}>

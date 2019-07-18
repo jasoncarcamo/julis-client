@@ -15,9 +15,14 @@ export default class Header extends React.Component{
         )
     }
 
+    componentDidMount(){
+        
+    }
+
     renderLogOut = ()=>{
         return (
             <ul>
+                <Link to="/user/services">services</Link>
                 <Link to="/" onClick={this.handleLogOut}>Log Out</Link>
             </ul>
         )

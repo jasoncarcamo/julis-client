@@ -1,14 +1,17 @@
 import React from 'react';
 import ApiContext from '../../apiContext/ApiContext';
 import UserService from '../../services/UserService';
-import RequestService from './RequestService/RequestService';
+import RequestService from './request-service/RequestService';
 import TokenService from '../../services/TokenService';
+import {Route, Link} from 'react-router-dom';
+import ServiceHistory from './service-history/ServiceHistory';
+import EditService from './edit-service/EditService';
 
 export default class User extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            first_name: 'oknfiwe', 
+            first_name: '', 
             last_name: '', 
             best_days_reach: '',
             best_time_reach: '',
@@ -26,11 +29,17 @@ export default class User extends React.Component{
         }
     }
 
+    static context = ApiContext;
+
     componentDidMount(){
         
-        if(this.props.match.params.id === UserService.getId()){
+        if(UserService.getId()){
             
-            fetch(`http://localhost:8000/user/${UserService.getId()}`)
+            fetch(`http://localhost:8000/user/`, {
+                headers: {
+                    'authorization': `bearer ${TokenService.getAuthToken()}`
+                }
+            })
                 .then( res => (!res.ok) ? res.json().then(e => Promise.reject(e)): res.json())
                     .then( resData => {
                         
@@ -57,17 +66,23 @@ export default class User extends React.Component{
             this.props.history.push('/login')
         }
     }
-
-    static context = ApiContext;
+    
+    handleRefresh = (e)=> {
+        this.props.history.push('/user/services')
+    }
 
     
     render(){
         
         return (
             <section>
-                <h2>Hello {this.state.first_name}</h2>
+                <Link to={`/user/services`}>Service details</Link>
+                <Link to={`/user/newservice`}>Arrange Clean Up</Link>
+                <h1>Hello {this.state.first_name}</h1>
+                <Route exact path={`/user/services`} component={props => <ServiceHistory{...props} refresh={this.handleRefresh}/>}></Route>
                 
-                <RequestService user={UserService.getId()}/>
+                <Route exact path={`/user/newservice`} render={props => <RequestService {...props} user={UserService.getId()}></RequestService> }></Route>
+                <Route path="/user/editservice" component={EditService}></Route>
             </section>
         )
     }
