@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<User/> create snapshot for User component 1`] = `
+<section
+  id="user_section"
+>
+  <h1>
+    Hello 
+    
+  </h1>
+  <div>
+    <a
+      className="Link"
+      href="/user/services"
+      onClick={[Function]}
+    >
+      Service details
+    </a>
+    <a
+      className="Link"
+      href="/user/newservice"
+      onClick={[Function]}
+    >
+      Arrange Clean Up
+    </a>
+  </div>
+</section>
+`;
+
+exports[`<User/> create snapshot for User componewnt 1`] = `
+<section
+  id="user_section"
+>
+  <h1>
+    Hello 
+    
+  </h1>
+  <div>
+    <a
+      className="Link"
+      href="/user/services"
+      onClick={[Function]}
+    >
+      Service details
+    </a>
+    <a
+      className="Link"
+      href="/user/newservice"
+      onClick={[Function]}
+    >
+      Arrange Clean Up
+    </a>
+  </div>
+</section>
+`;

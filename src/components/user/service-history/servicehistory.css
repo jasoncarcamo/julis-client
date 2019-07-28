@@ -1,0 +1,39 @@
+#service_header{
+    margin: 7% 0 0 0;
+    padding: 0;
+}
+
+#service_header > ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#service_header > ul li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: 3% auto;
+    text-align: center;
+    border: 2px solid black;
+    box-shadow: .5em .5em .8em grey;
+}
+
+
+#service_header > ul li > header{
+    margin: 2% auto;
+    font-weight: bold
+}
+
+#service_header > ul li button{
+    display: inline-block !important;
+    margin: 5% auto 1% auto;
+    width: 6em;
+    height: 3em;
+    border: 1px solid black;
+}
+
+.cancel_confirm{
+    margin: 5% auto 3% auto!important;
+}

@@ -1,56 +1,105 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 import tokenService from '../../../services/TokenService';
 import queryString from 'query-string';
+import DatePicker from 'react-date-picker';
+import TimePicker from 'react-time-picker';
+import './editservice.css';
 
-
-export default class EditService extends React.Component{
+class EditService extends React.Component{
     constructor(props){
         super(props);
         this.state = {
+            services: [
+                {
+                    name: 'Windows',
+                    price: '20.00'
+                },
+                {
+                    name: 'Refridgerator',
+                    price: '20.00'
+                },
+                {
+                    name: 'Walls',
+                    price: '30.00'
+                }
+            ],
             service_type: '',
             comments: '',
-            day: '',
-            best_time_reached: '',
-            price: ''
+            time: '',            
+            date: new Date(),
+            price: '0.00'
         }
     }
 
-    componentWillMount(){
-        const serviceId = queryString.parse(this.props.location.search);
-        console.log(serviceId)
-        fetch(`http://localhost:8000/user/service`, {
-            headers: {
-                'content-type': 'application/json',
-                'authorization': `bearer ${tokenService.getAuthToken()}`
-            }
-        })
-        .then( res => res.json())
-        .then(resData => {
+    handleService= (e)=>{
+        let newService;
+        let newPrice;
+        let serviceArray;
+        let serviceIndex;
+        let targetName;
 
-            const currentService = resData.services.filter( service => service.id == serviceId.id)[0]
+        if(e.target.checked){
             
-            this.setState({ service_type: currentService.service_type, comments: currentService.comments, day: currentService.day, price: currentService.price
-            })
-        })
-        console.log(this.state)
-    }
-
-    handleService = (e)=>{
-        this.setState({ service_type: e.target.value})
+            newService = this.state.service_type + ',' + e.target.name;     
+            serviceArray = newService.split(',');      if(serviceArray[0] === ""){
+                serviceArray.shift();                
+            }
+            
+            newService = serviceArray.join(',');
+            newPrice = parseFloat(this.state.price) + parseFloat(e.target.value)
+                        
+        } else{
+            
+            targetName = e.target.name
+            serviceArray = this.state.service_type.split(',');
+            serviceIndex = serviceArray.indexOf(targetName)
+            
+            serviceArray.splice(serviceIndex, 1)
+            if(serviceArray[0] === ""){
+                serviceArray.shift()
+            }
+            
+            newService = serviceArray.join(', ')
+            
+            newPrice = parseFloat(this.state.price) - parseFloat(e.target.value)
+        }
+        
+        this.setState({service_type: newService})
+        this.setState({ price: newPrice});
+       
     }
 
     handleComments = (e)=>{
+        
         this.setState({ comments: e.target.value})
     }
 
-    handleDay = (e)=>{
-        this.setState({ day: e.target.value})
+    handleDay = (date)=>{
+        this.setState({date})
     }
 
-    handleTime = (e)=>{
-        this.setState({ best_time_reached: e.target.value})
+    handleTime = (time)=>{
+        this.setState({time})
     }
 
+    formatTime = ()=>{
+        let newTime;
+        const arr = this.state.time.split(':');
+        if(arr[0] > 12){
+            arr[0] = arr[0] - 12 ;
+            newTime = arr.join(':') + ' PM';
+        } else if(arr[0] === '00'){
+            arr[0] = '12'
+            newTime = arr.join(':') + ' AM'
+        } else if(arr[0] === '12'){
+            newTime = arr.join(':') + ' PM'
+        }
+        else{
+            newTime = arr.join(':') + ' AM';
+        }
+        return newTime;
+    }
     handlePrice = (e)=>{
         this.setState({ price: e.target.value})
     }
@@ -65,38 +114,49 @@ export default class EditService extends React.Component{
                 'content-type': 'application/json',
                 'authorization': `bearer ${tokenService.getAuthToken()}`
             },
-            body: JSON.stringify({service_type: this.state.service_type, comments: this.state.comments, day: this.state.day, best_time_reached: this.state.best_time_reached, price: this.state.price, id: serviceId.id, date_modified: new Date()})
+            body: JSON.stringify({service_type: this.state.service_type, comments: this.state.comments, day: this.state.date, best_time_reached: `${this.formatTime()}`, price: this.state.price, id: serviceId.id, date_modified: new Date()})
         })
         this.props.history.push('/user/services')
     }
 
     render(){
-        
+
         return (
-            <section>
-                <form onSubmit={this.handleSubmit}>
+            <section id="edit_section">
+                <form onSubmit={this.handleSubmit} id="edit_form">
                     <fieldset>
-                        <label htmlFor="edit_type">Service type:</label>
-                        <input type="text" id="edit_type" onChange={this.handleService} value={this.state.service_type}/>
+                        <header><h1>Edit your service.</h1></header>
 
-                        <label htmlFor="edit_comments">Comments
-                        ?</label>
-                        <input type="text" id="edit_comments" onChange={this.handleComments} value={this.state.comments}></input>
+                        <div className="checkbox-grid">
+                            <div>
+                                {this.state.services.map( service => (
+                                    <label key={service.name} htmlFor={`edit_${service.name}`}>
+                                        <input type="checkbox" id={`edit_${service.name}`} name={service.name} value={service.price} onChange={this.handleService}>                               
+                                        </input>{service.name}
+                                    </label>)
+                                )}
+                            </div>
 
-                        <label htmlFor="edit_day">Day</label>
-                        <input type="text" id="edit_day" onChange={this.handleDay} value={this.state.day}></input>
+                            <span id="edit_price">${this.state.price}</span>
+                        </div>
+
+                        <label htmlFor="edit_day">When?</label>
+                        <DatePicker className="edit_days" value={this.state.date} onChange={this.handleDay} required/>
 
                         <label htmlFor="edit_time">Time:
                         </label>
-                        <input type="text" id="edit_time" onChange={this.handleTime} value={this.state.best_time_reached}></input>
+                        <TimePicker id="edit_time" onChange={this.handleTime} value={this.state.time} disableClock={true} />
 
-                        <label htmlFor="edit_price">Price:
-                        </label>
-                        <input type="text" id="edit_price" onChange={this.handlePrice} value={this.state.price}></input>
-                        <button type="submit">Go</button>
+                        <label htmlFor="edit_comments">Comments
+                        ?</label>
+                        <textarea id="edit_comments" onChange={this.handleComments} value={this.state.comments} placeholder="Any special request?"></textarea>
+
+                        <button type="submit" id="edit_submit">Go</button>
                     </fieldset>
                 </form>
             </section>
         )
     }
 }
+
+export default withRouter(EditService);

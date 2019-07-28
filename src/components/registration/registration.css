@@ -1,0 +1,45 @@
+
+#reg_form{
+    display: block;
+    width: 90%;
+    margin: 10% auto;
+}
+
+#reg_form > fieldset {    
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1em;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+}
+
+#reg_form > fieldset > label{
+    display: block;
+    margin: 8% auto 0 auto;
+    width: 55%;
+}
+
+#reg_form > fieldset > input{
+    display: block;
+    margin: 0 auto 0 auto;
+    width: 55%;
+    height: 2em;
+    padding: 1em;
+}
+
+.correct_password{
+    display: block;
+    margin: 2% 0 0 30%;
+}
+
+.incorrect_password{
+    display: block;
+}
+
+#reg_submit{
+    margin: 5% auto;
+    width: 6em;
+    height: 3em;
+}

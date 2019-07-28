@@ -1,9 +1,8 @@
 import React from 'react';
 import AuthService from '../../services/AuthService';
 import TokenService from '../../services/TokenService';
-import ApiContext from '../../apiContext/ApiContext';
 import UserService from '../../services/UserService';
-
+import './login.css';
 
 
 export default class LogIn extends React.Component{
@@ -14,8 +13,6 @@ export default class LogIn extends React.Component{
             password: ''
         }
     }
-
-    static contextType = ApiContext;
 
     componentDidMount(){
 
@@ -35,9 +32,9 @@ export default class LogIn extends React.Component{
     handleSubmit = (e)=>{
         e.preventDefault();
         const {mobile_number, password} = this.state;
-
+        
         AuthService.postLogin(mobile_number, password).then( resData => {
-           
+            
             if(!resData){
                 console.log(resData.error)
                 this.props.history.push('/register')
@@ -61,20 +58,19 @@ export default class LogIn extends React.Component{
 
     render(){
         return (
-            
-            <form onSubmit={this.handleSubmit}>
-                <fieldset>
-                    <header>Log In</header>
-                    <label htmlFor="user_name">Mobile Number:</label>
-                    <input type="text" id="user_name" onChange={this.handleNumber} value={this.state.mobile_number}></input>
+            <section id="login_section">
+                <form onSubmit={this.handleSubmit} id="login_form">
+                    <fieldset>
+                        <label htmlFor="user_name">Mobile Number:</label>
+                        <input type="text" id="user_name" onChange={this.handleNumber} value={this.state.mobile_number}></input>
 
-                    <label htmlFor="password">Password</label>
-                    <input id="password" type="password" onChange={this.handlePassword} value={this.state.password}></input>
+                        <label htmlFor="password">Password:</label>
+                        <input id="password" type="password" onChange={this.handlePassword} value={this.state.password}></input>
 
-                    <button type="submit">Log In</button>
-                </fieldset>
-            </form>
-            
+                        <button type="submit" id="login_submit">Log In</button>
+                    </fieldset>
+                </form>
+            </section>
         )
     }
 } 

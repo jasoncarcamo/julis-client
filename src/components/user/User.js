@@ -1,13 +1,14 @@
 import React from 'react';
-import ApiContext from '../../apiContext/ApiContext';
 import UserService from '../../services/UserService';
 import RequestService from './request-service/RequestService';
 import TokenService from '../../services/TokenService';
-import {Route, Link} from 'react-router-dom';
+import {Route, Link, withRouter} from 'react-router-dom';
 import ServiceHistory from './service-history/ServiceHistory';
 import EditService from './edit-service/EditService';
+import './user.css';
 
-export default class User extends React.Component{
+
+class User extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -28,8 +29,6 @@ export default class User extends React.Component{
             verified: ''
         }
     }
-
-    static context = ApiContext;
 
     componentDidMount(){
         
@@ -66,6 +65,8 @@ export default class User extends React.Component{
             this.props.history.push('/login')
         }
     }
+
+ 
     
     handleRefresh = (e)=> {
         this.props.history.push('/user/services')
@@ -73,17 +74,24 @@ export default class User extends React.Component{
 
     
     render(){
-        
         return (
-            <section>
-                <Link to={`/user/services`}>Service details</Link>
-                <Link to={`/user/newservice`}>Arrange Clean Up</Link>
+            <section id="user_section">
+
                 <h1>Hello {this.state.first_name}</h1>
-                <Route exact path={`/user/services`} component={props => <ServiceHistory{...props} refresh={this.handleRefresh}/>}></Route>
+
+                <div>
+                    <Link to={`/user/services`} className="Link">Service details</Link>
+                    <Link to={`/user/newservice`} className="Link">Arrange Clean Up</Link>
+                </div>
                 
-                <Route exact path={`/user/newservice`} render={props => <RequestService {...props} user={UserService.getId()}></RequestService> }></Route>
+
+                <Route exact path={`/user/services`} component={props => <ServiceHistory {...props} refresh={this.handleRefresh}/>}></Route>                
+                <Route exact path={`/user/newservice`} render={props => <RequestService {...props} user={UserService.getId()} refresh={this.handleRefresh}></RequestService> }></Route>
                 <Route path="/user/editservice" component={EditService}></Route>
+                
             </section>
         )
     }
 }
+
+export default withRouter(User);

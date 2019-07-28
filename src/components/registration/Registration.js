@@ -1,6 +1,7 @@
 import React from 'react';
 import AuthService from '../../services/AuthService';
 import uuid4 from 'uuid/v4';
+import './registration.css';
 
 
 export default class Registration extends React.Component{
@@ -11,6 +12,7 @@ export default class Registration extends React.Component{
            last_name: '',
            email: '' ,
            password: '',
+           passConfirm: '',
            home_number: '',
            mobile_number: '',
            address: '',
@@ -37,6 +39,20 @@ export default class Registration extends React.Component{
 
     handlePassword = (e)=>{
         this.setState({password: e.target.value});
+    }
+    
+    handlePasswordConfirmation = (e)=>{
+        this.setState({ passConfirm: e.target.value})
+    }
+
+    handlePasswordMatch = ()=>{
+        
+        if(this.state.password.length > 5 && this.state.passConfirm.length > 5 && this.state.password === this.state.passConfirm){
+            return (<span className="correct_password">Great!</span>);
+        } else{
+            return (<span className="incorrect_password">Passwords do not match.</span>);
+        }
+    
     }
 
     handleHomeNumber =(e)=>{
@@ -96,46 +112,53 @@ export default class Registration extends React.Component{
     }
 
     render(){
+    
         return (
-            <form onSubmit={this.handleSubmit}>
-                <fieldset>
-                
-
-                    <label htmlFor="reg_first_name">First Name:</label>
-                    <input type="text" id="reg_first_name" onChange={this.handleFirstName} value={this.state.first_name}/>
-
-                    <label htmlFor="reg_last_name">Last Name:</label>
-                    <input type="text" id="reg_last_name" onChange={this.handleLastName} value={this.state.last_name}/>
-
-
-                    <label htmlFor="reg_email">Email:</label>
-                    <input type="text" id="reg_email" onChange={this.handleEmail} value={this.state.email}/>
-
-                    <label htmlFor="reg_password">Enter a password</label>
-                    <input type="password" id="reg_password" onChange={this.handlePassword} value={this.state.password}/>
+            <section id="reg_section">
+                <form onSubmit={this.handleSubmit} id="reg_form">
+                    <fieldset>
                     
-                    <label htmlFor="reg_home_number">Home Number:</label>
-                    <input text="text" id="reg_phone_number" onChange={this.handleHomeNumber} value={this.state.home_number}></input>
 
-                    <label htmlFor="reg_mobile_number">Mobile Number:</label>
-                    <input type="text" id="reg_mobile_number" onChange={this.handleMobileNumber} value={this.state.mobile_number}/> 
+                        <label htmlFor="reg_first_name">* First Name:</label>
+                        <input type="text" id="reg_first_name" onChange={this.handleFirstName} value={this.state.first_name} required/>
 
-                    <label htmlFor="reg_address">Address:</label>
-                    <input type="text" id="reg_address" onChange={this.handleAddress} value={this.state.address}/>
+                        <label htmlFor="reg_last_name">* Last Name:</label>
+                        <input type="text" id="reg_last_name" onChange={this.handleLastName} value={this.state.last_name} required/>
 
-                    <label htmlFor="reg_city">City:</label>
-                    <input type="text" id="reg_city" onChange={this.handleCity} value={this.state.city}/>
 
-                    <label htmlFor="reg_state">State Region:</label>
-                    <input type="text" id="reg_state" onChange={this.handleStateRegion} value={this.state.state_region}/>
+                        <label htmlFor="reg_email">* Email:</label>
+                        <input type="text" id="reg_email" onChange={this.handleEmail} value={this.state.email} required/>
 
-                    <label htmlFor="reg_zipcode">Zip Code</label>
-                    <input type="number" id="reg_zipcode" onChange={this.handleZipCode} vlaue={this.state.zipcode}/>
+                        <label htmlFor="reg_password">* Enter a password:</label>
+                        <input type="password" id="reg_password" onChange={this.handlePassword} value={this.state.password} required/>
+                        
+                        <label htmlFor="re_password_confirm">* Retype password:
+                        </label>
+                        <input type="password" onChange={this.handlePasswordConfirmation} value={this.state.passConfirm} required></input>     
+                        {this.state.passConfirm.length < 5 ? '' : this.handlePasswordMatch()}
 
-                    
-                    <button type="submit">Sign me up</button>
-                </fieldset>
-            </form>
+                        <label htmlFor="reg_home_number">Home Number:</label>
+                        <input text="text" id="reg_phone_number" onChange={this.handleHomeNumber} value={this.state.home_number}></input>
+
+                        <label htmlFor="reg_mobile_number">* Mobile Number:</label>
+                        <input type="text" id="reg_mobile_number" onChange={this.handleMobileNumber} value={this.state.mobile_number} required/> 
+
+                        <label htmlFor="reg_address">* Address:</label>
+                        <input type="text" id="reg_address" onChange={this.handleAddress} value={this.state.address}/>
+
+                        <label htmlFor="reg_city">* City:</label>
+                        <input type="text" id="reg_city" onChange={this.handleCity} value={this.state.city} required/>
+
+                        <label htmlFor="reg_state">* State Region:</label>
+                        <input type="text" id="reg_state" onChange={this.handleStateRegion} value={this.state.state_region} required/>
+
+                        <label htmlFor="reg_zipcode">* Zip Code</label>
+                        <input type="text" id="reg_zipcode" onChange={this.handleZipCode} vlaue={this.state.zipcode} required/>
+
+                        <button type="submit" id="reg_submit">Sign me up</button>
+                    </fieldset>
+                </form>
+            </section>
         )
     }
 }

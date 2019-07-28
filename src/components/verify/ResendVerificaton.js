@@ -1,6 +1,7 @@
 import React from 'react';
 import AuthService from '../../services/AuthService';
 import queryString from 'query-string';
+import './resendverification.css';
 
 
 export default class ResendVerification extends React.Component{
@@ -33,7 +34,7 @@ export default class ResendVerification extends React.Component{
     }
 
     handleNumber = (e)=>{
-        this.setState({mobile_number: e.target.value})
+        this.setState({mobile_number: e.target.val7ue})
     }
 
     handlePassword = (e)=>{
@@ -72,15 +73,15 @@ export default class ResendVerification extends React.Component{
     render(){
 
         return (
-            <section>
-                {this.state.sent ? <h3>Confirmation sent to email: {this.state.email}</h3> : <form onSubmit={this.handleSubmit}>
+            <section id="resend_ver_section">
+                {this.state.sent ? <h2>Confirmation sent to email: {this.state.email}</h2> : <form onSubmit={this.handleSubmit} id="resend_ver_form">
                     <header>Your email has not been verified yet. Please type in your log in information</header>
                     <fieldset>
                         <label htmlFor="ver_email">Mobile Number:</label>
                         <input type="text" id="ver_email" onChange={this.handleNumber} value={this.state.mobile_number}></input>
                         <label htmlFor="ver_password">Password:</label>
                         <input type="password" id="ver_pass" onChange={this.handlePassword} value={this.state.password}></input>
-                        <button type="submit"></button>
+                        <button type="submit" id="resend_ver_submit">send verification</button>
                     </fieldset>
                 </form>}
             </section>

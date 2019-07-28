@@ -1,0 +1,141 @@
+#req_section{
+    margin: 7% 0 7% 0;
+    padding: 0;
+}
+
+#req_form{
+    padding: 0;
+    margin: 0;
+}
+
+#req_form > fieldset{
+    display: flex;
+    width: 65%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#req_form > fieldset header{
+    margin: 2% auto;
+}
+
+#req_form > fieldset > header > h1{
+    width: 80%;
+    text-align: center;
+    margin: 5% auto;
+    font-size: 1.5em;
+}
+
+#req_form > fieldset > label{
+    width: 50%;
+    margin: 4% auto 1% auto;
+    text-align: center;
+}
+
+.checkbox-grid{
+    display: grid;
+    grid-template: 1fr/ 1fr 1fr;
+    grid-gap: 1%;
+    padding: 2%;
+    margin: 1% 0 10% 0;
+}
+
+.checkbox-grid div{
+    display: inline-block;
+    width: 100%;
+}
+
+.checkbox-grid > div label{
+    display: block;
+    margin: 2% auto 2% 40%;
+}
+
+#req_price{
+    display: inline-block;
+    font-size: 1.8em;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    color: rgb(4, 194, 4);
+    padding: 0;
+    margin: auto 0;
+}
+
+#req_days{
+    display: block;
+    height: 3em;
+    text-align: center;
+    margin: 0 auto 0 auto;
+}
+
+.react-date-picker{
+    margin-left: 40%;
+    width: 50%;
+}
+
+.react-time-picker{
+    width: 20%;
+    height: 2.8em;
+    margin: 0 auto;
+}
+
+#req_comments{
+    width: 60%;
+    height: 12em;
+    margin: 0 auto 0 auto;
+    border: 1px solid black;
+}
+
+#req_submit{
+    margin: 2% auto;
+    width: 6em;
+    height: 3em;
+    border: 1px solid black;
+}
+
+
+
+@media screen and (max-width: 750px){
+    .checkbox-grid div{
+        display: inline-block;
+        width: 100%;
+    }
+    
+    .checkbox-grid > div label{
+        display: block;
+        width: 100%;
+        margin: 2% auto 2% 30%;
+    }
+    
+    #req_price{
+        display: inline-block;
+        font-size: 1.8em;
+        width: 100%;
+        height: 50%;
+        text-align: center;
+        color: rgb(4, 194, 4);
+        padding: 0;
+        margin: auto 0;
+    }
+    
+    #req_days{
+        display: block;
+        height: 3em;
+        text-align: center;
+        margin: 0 auto 0 auto;
+    }
+    
+    .react-date-picker{
+        margin: 0 auto;
+        width: 30%;
+    }
+    
+    .react-time-picker{
+        width: 30%;
+        height: 2.8em;
+        margin: 0 auto;
+    }
+
+}

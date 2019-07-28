@@ -8,9 +8,11 @@
     "nodemailer": "^6.2.1",
     "query-string": "^6.8.1",
     "react": "^16.8.6",
+    "react-date-picker": "^7.8.0",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "react-time-picker": "^3.6.1",
     "uuid": "^3.3.2"
   },
   "scripts": {
@@ -33,5 +35,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.3.5",
+    "mocha": "^6.2.0",
+    "react-test-renderer": "^16.8.6",
+    "supertest": "^4.0.2"
   }
 }
