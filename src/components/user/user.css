@@ -8,14 +8,9 @@
     justify-content: space-evenly;
 }
 
-#user_section > div *{
-    
-    color: pink;
-}
 
 #user_section > h1{
     margin: 2% auto 5% 50%;
     width: 40%;
     text-align: right;
-    color: pink;
 }

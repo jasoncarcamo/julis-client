@@ -10,7 +10,6 @@
 
 /*first section*/
 #first_section{    
-    background-image: url("../../picture-assests/first_section.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -30,7 +29,6 @@
 
 #first_section > h2{
     font-size: 1.6em;
-    color: white;
     margin: 15% 0 -2% 0;    
     text-align: center;
 }
@@ -38,7 +36,6 @@
 #first_section p{
     width: 60%;
     margin: 3% auto;
-    color: white;
     font-size: 1.1em;
     text-align: center;
 }
@@ -47,9 +44,7 @@
     display: block;
     margin: 4% auto 0 auto;
     padding: 1%;
-    background-color: pink;
     border: none;
-    color: white;
     font-size: 1.1em;
 }
 
@@ -65,8 +60,7 @@
     background-color: rgb(218, 218, 218);
 }
 
-#features_section section{
-    background-color: white;    
+#features_section section{ 
     padding: 0;
     text-align: center;
 }
@@ -114,7 +108,9 @@
 
 
 @media screen and (max-width: 750px ){
-  
+  #homepage{
+      margin-top: 12%;
+  }
 /*first section*/  
     #first_section{
         height: 75vh;

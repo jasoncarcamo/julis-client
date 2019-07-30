@@ -7,9 +7,6 @@
     font-size: 1.25em;
 }
 
-#header-nav *{    
-    color: white;    
-}
 
 #header-nav {
     position: fixed;
@@ -20,7 +17,6 @@
     display: flex;
     justify-content: space-between;
     border: 1px solid lightgrey;
-    background-color: pink;
 }
 
 #logo-icon{
@@ -33,7 +29,6 @@
     justify-content: space-evenly;
     margin: auto 2%;
     width: 45%;    
-    color: white;
 }
 
 
