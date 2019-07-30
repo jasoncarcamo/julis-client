@@ -1,9 +1,31 @@
 *{
   box-sizing: border-box;
+  font-family: 'Times New Roman', Times, sans-serif;
 }
 body{
   margin: 0;
   padding: 0;
   max-width: 100vw;
   font-size: 1.15em; 
+}
+
+footer{
+  padding: 0;
+  height: 3.5em;
+  border: 1px solid transparent;
+  background-color: pink;
+}
+
+footer p{
+  color: white;
+  width: 80%;
+  font-size: .8em;
+  margin: 2% 0 auto 2%;
+}
+
+@media screen and (max-width: 750px){
+  footer{
+    margin-bottom: -500%;
+    bottom: 0;
+  }
 }

@@ -129,7 +129,7 @@ export default class Registration extends React.Component{
                         <label htmlFor="reg_email">* Email:</label>
                         <input type="text" id="reg_email" onChange={this.handleEmail} value={this.state.email} required/>
 
-                        <label htmlFor="reg_password">* Enter a password:</label>
+                        <label htmlFor="reg_password">* Enter a password: <span id="password_requirements">Password must contain one upper case, lower case, number and special character</span></label>
                         <input type="password" id="reg_password" onChange={this.handlePassword} value={this.state.password} required/>
                         
                         <label htmlFor="re_password_confirm">* Retype password:
@@ -153,7 +153,7 @@ export default class Registration extends React.Component{
                         <input type="text" id="reg_state" onChange={this.handleStateRegion} value={this.state.state_region} required/>
 
                         <label htmlFor="reg_zipcode">* Zip Code</label>
-                        <input type="text" id="reg_zipcode" onChange={this.handleZipCode} vlaue={this.state.zipcode} required/>
+                        <input type="text" id="reg_zipcode" onChange={this.handleZipCode} value={this.state.zipcode} required/>
 
                         <button type="submit" id="reg_submit">Sign me up</button>
                     </fieldset>

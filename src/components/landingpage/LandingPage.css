@@ -1,0 +1,150 @@
+
+/*main section*/
+#homepage{
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    margin-top: 5%;
+}
+
+
+/*first section*/
+#first_section{    
+    background-image: url("../../picture-assests/first_section.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+    border: 1px solid lightgrey;
+}
+
+#first_section > header > h1{
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-left: 5%;
+    padding: 1.5%;
+}
+
+#first_section > h2{
+    font-size: 1.6em;
+    color: white;
+    margin: 15% 0 -2% 0;    
+    text-align: center;
+}
+
+#first_section p{
+    width: 60%;
+    margin: 3% auto;
+    color: white;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+#first_section > button{
+    display: block;
+    margin: 4% auto 0 auto;
+    padding: 1%;
+    background-color: pink;
+    border: none;
+    color: white;
+    font-size: 1.1em;
+}
+
+
+/*features section*/
+#features_section{
+    display: grid;
+    width: 100%;
+    grid-template: 1fr / auto auto auto;
+    grid-gap: 2em;
+    padding: 5% 7%;
+    margin: 2% 0;
+    background-color: rgb(218, 218, 218);
+}
+
+#features_section section{
+    background-color: white;    
+    padding: 0;
+    text-align: center;
+}
+
+#features_section section p{
+    width: 80%;
+    margin: 10% auto 4% auto;
+    text-align: center;
+}
+
+#child_friendly img{
+    width: 100%;
+    
+}
+
+#clean_kitchen img {
+    width: 100%;
+    height: 16em;
+}
+
+#clean_office img{
+    width: 100%;
+    height: 45%;
+}
+
+/* living room section */
+#living_room_section{
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+}
+
+#clean_living_room{
+    width: 100%;
+    height: 25em;
+}
+
+#living_room_section p{
+    width: 95%;
+    height: 50%;
+    margin: auto;
+    text-align: center;
+    padding: 6%;
+}
+
+
+
+@media screen and (max-width: 750px ){
+  
+/*first section*/  
+    #first_section{
+        height: 75vh;
+    }
+
+    #first_section button{
+        margin-top: 10%;
+    }
+
+    /*features section*/
+    #features_section{
+        grid-template: auto auto auto / 1fr;
+    }
+
+    #features_section section{
+        width: 75%;
+        margin: 0 auto;
+    }
+
+
+    /*living room section */
+    #living_room_section{
+        grid-template: 1fr 1fr / 1fr;
+    }
+
+    #clean_living_room{
+        height: auto;
+    }
+
+    #living_room_section p{
+        margin: 5% auto 0 auto;
+    }
+}
