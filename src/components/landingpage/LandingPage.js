@@ -4,6 +4,7 @@ import cleanCrib from '../../picture-assests/clean_crib.jpg';
 import cleanKitchen from '../../picture-assests/clean_kitchen.jpg';
 import cleanOffice from '../../picture-assests/clean_office.jpg';
 import cleanLivingRoom from '../../picture-assests/clean_living_room.jpg';
+import {Link} from 'react-router-dom';
 
 
 
@@ -54,8 +55,9 @@ class LandingPage extends React.Component{
 
                 </section>
 
-                <section>
-
+                <section id="landing_sign_up">
+                    <p></p>
+                    <Link to="/register">Get Started</Link>
                 </section>
 
             </section>

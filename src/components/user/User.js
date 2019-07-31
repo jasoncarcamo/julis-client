@@ -34,7 +34,7 @@ class User extends React.Component{
         
         if(UserService.getId()){
             
-            fetch(`http://localhost:8000/user/`, {
+            fetch(`https://fathomless-eyrie-65525.herokuapp.com/user/`, {
                 headers: {
                     'authorization': `bearer ${TokenService.getAuthToken()}`
                 }

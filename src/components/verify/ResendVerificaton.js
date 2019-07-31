@@ -20,7 +20,7 @@ export default class ResendVerification extends React.Component{
     componentDidMount(){
         const auth = queryString.parse(this.props.location.search);
         
-        fetch(`http://localhost:8000/user`, {
+        fetch(`https://fathomless-eyrie-65525.herokuapp.com/user`, {
             headers: {
                 'authorization': `bearer ${auth.token}`
             }
@@ -41,11 +41,7 @@ export default class ResendVerification extends React.Component{
         this.setState({ password: e.target.value})
     }
 
-    send = (e)=>{
-        e.preventDefault();
-        return fetch(`http://localhost:8000/api/verify?`)
-    }
-
+    
     handleSubmit = (e)=>{
         e.preventDefault();
 
@@ -55,7 +51,7 @@ export default class ResendVerification extends React.Component{
                 this.setState({ email: res.email})
 
                 if(res){
-                fetch(`http://localhost:8000/api/verify?token=${res.authToken}&id=${res.id}`, {
+                fetch(`https://fathomless-eyrie-65525.herokuapp.com/api/verify?token=${res.authToken}&id=${res.id}`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

@@ -108,7 +108,7 @@ class EditService extends React.Component{
         
         e.preventDefault();
         const serviceId = queryString.parse(this.props.location.search);
-        fetch(`http://localhost:8000/user/service`, {
+        fetch(`https://fathomless-eyrie-65525.herokuapp.com/user/service`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',

@@ -108,7 +108,7 @@ export default class RequestService extends React.Component{
     handleSubmit = (e)=>{
         e.preventDefault();
         
-        fetch(`http://localhost:8000/user/service`, {
+        fetch(`https://fathomless-eyrie-65525.herokuapp.com/user/service`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

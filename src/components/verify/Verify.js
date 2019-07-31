@@ -11,7 +11,7 @@ export default class Verify extends React.Component{
     componentDidMount(){
         const query = queryString.parse(this.props.location.search);
 
-        fetch(`http://localhost:8000/api/verify?token=${query.token}&id=${query.id}`, {
+        fetch(`https://fathomless-eyrie-65525.herokuapp.com/api/verify?token=${query.token}&id=${query.id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

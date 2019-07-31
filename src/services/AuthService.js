@@ -1,7 +1,7 @@
 
 const AuthService = {
     postLogin(mobile_number, password){
-        return fetch('http://localhost:8000/api/login', {
+        return fetch('https://fathomless-eyrie-65525.herokuapp.com/api/login', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -13,7 +13,7 @@ const AuthService = {
         })
     },
     registerUser({first_name, last_name, email, password, home_number,  mobile_number, address, city, state_region, zipcode, id}){
-        return fetch('http://localhost:8000/api/register', {
+        return fetch('https://fathomless-eyrie-65525.herokuapp.com/api/register', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

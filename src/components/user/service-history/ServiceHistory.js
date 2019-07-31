@@ -23,7 +23,7 @@ export default class ServiceHistory extends React.Component{
 
     componentDidMount(){
         
-        fetch('http://localhost:8000/user/service', {            
+        fetch('https://fathomless-eyrie-65525.herokuapp.com/user/service', {            
             headers: {
                 'authorization': `bearer ${TokenService.getAuthToken()}`
             }
@@ -36,7 +36,7 @@ export default class ServiceHistory extends React.Component{
     handleCancelService = (e)=>{
         e.preventDefault()
 
-        fetch(`http://localhost:8000/user/service`, {
+        fetch(`https://fathomless-eyrie-65525.herokuapp.com/user/service`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',
