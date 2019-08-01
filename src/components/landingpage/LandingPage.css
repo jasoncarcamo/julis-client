@@ -137,6 +137,10 @@
   }
 /*first section*/  
 
+#first_section{
+    height: 25em;
+}
+
     #first_section a{
         border: 1px solid black;
         margin-top: 10%;
