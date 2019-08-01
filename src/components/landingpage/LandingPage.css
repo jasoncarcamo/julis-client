@@ -40,12 +40,18 @@
     text-align: center;
 }
 
-#first_section > button{
+#first_section a{
     display: block;
+    width: 9em;
+    height: 5em;
+    border: 1px solid black !important;
     margin: 4% auto 0 auto;
-    padding: 1%;
+    text-align: center;
+    padding-top: 3%;
     border: none;
     font-size: 1.1em;
+    color: black;
+    text-decoration: none;
 }
 
 
@@ -63,6 +69,7 @@
 #features_section section{ 
     padding: 0;
     text-align: center;
+    background-color: white;
 }
 
 #features_section section p{
@@ -73,17 +80,17 @@
 
 #child_friendly img{
     width: 100%;
-    
+    height: 50%;
 }
 
 #clean_kitchen img {
     width: 100%;
-    height: 16em;
+    height: 15em;
 }
 
 #clean_office img{
     width: 100%;
-    height: 45%;
+    height: 50%;
 }
 
 /* living room section */
@@ -105,6 +112,18 @@
     padding: 6%;
 }
 
+.to_signup{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 1.5%;
+    width: 8em; 
+    height: 3.5em;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+}
+
 
 
 @media screen and (max-width: 750px ){
@@ -116,8 +135,10 @@
         height: 75vh;
     }
 
-    #first_section button{
+    #first_section a{
+        border: 1px solid black;
         margin-top: 10%;
+        padding-top: 6%;
     }
 
     /*features section*/
@@ -142,5 +163,9 @@
 
     #living_room_section p{
         margin: 5% auto 0 auto;
+    }
+
+    .to_signup{
+        padding-top: 3%;
     }
 }

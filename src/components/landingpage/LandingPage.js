@@ -18,7 +18,7 @@ class LandingPage extends React.Component{
                     <header><h1>Julis Cleaning Service</h1></header>
                     <h2>Quality Service at an Affordable Price</h2>
                     <p>Commercial & Industrial Sanitation Professionals</p>
-                    <button type="button">About Us</button>
+                    <a href="#child_friendly">About Us</a>
                 </section>
 
                 <section id="features_section">
@@ -57,7 +57,7 @@ class LandingPage extends React.Component{
 
                 <section id="landing_sign_up">
                     <p></p>
-                    <Link to="/register">Get Started</Link>
+                    <Link to="/register" className="to_signup">Get Started</Link>
                 </section>
 
             </section>
