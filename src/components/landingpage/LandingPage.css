@@ -136,9 +136,6 @@
       margin-top: 25%;
   }
 /*first section*/  
-    #first_section{
-        height: 25em;
-    }
 
     #first_section a{
         border: 1px solid black;
@@ -180,6 +177,9 @@
 
 @media screen and (max-width: 768px){
 
+    #first_section{
+        height: 25em;
+    }
     #features_section section img{
         height: 25%;
     }
