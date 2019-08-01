@@ -1,6 +1,6 @@
 {
     "version": 2,
-  "name": "jason-noteful-app",
+  "name": "jason-juliscleaning-app",
   "routes": [
       {
         "src": "^/static/(.*)",
