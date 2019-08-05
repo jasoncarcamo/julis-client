@@ -1,3 +1,10 @@
+.no_service{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1em;
+}
+
 #service_header{
     margin: 7% 0 0 0;
     padding: 0;

@@ -83,8 +83,8 @@ class User extends React.Component{
                     <Link to={`/user/services`} className="Link">Service details</Link>
                     <Link to={`/user/newservice`} className="Link">Arrange Clean Up</Link>
                 </div>
-                
 
+                <Route exact path="/user" component={props => <ServiceHistory {...props} refresh={this.handleRefresh}/>}/>
                 <Route exact path={`/user/services`} component={props => <ServiceHistory {...props} refresh={this.handleRefresh}/>}></Route>                
                 <Route exact path={`/user/newservice`} render={props => <RequestService {...props} user={UserService.getId()} refresh={this.handleRefresh}></RequestService> }></Route>
                 <Route path="/user/editservice" component={EditService}></Route>

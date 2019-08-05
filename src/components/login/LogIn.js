@@ -10,7 +10,8 @@ export default class LogIn extends React.Component{
         super(props);
         this.state = {
             mobile_number: '',
-            password: ''
+            password: '',
+            error: ''
         }
     }
 
@@ -35,9 +36,8 @@ export default class LogIn extends React.Component{
         
         AuthService.postLogin(mobile_number, password).then( resData => {
             
-            if(!resData){
-                console.log(resData.error)
-                this.props.history.push('/register')
+            if(resData.error){
+                this.setState({ error: resData.error})
             }
             if(resData.verified){
                 TokenService.saveAuthToken(resData.authToken);
@@ -47,7 +47,8 @@ export default class LogIn extends React.Component{
                 this.props.history.push(`api/resend?token=${resData.authToken}`)
             }
             
-        });
+        })
+        .catch(error => this.setState({error: error.error}));
         
     }
 
@@ -57,6 +58,7 @@ export default class LogIn extends React.Component{
     }
 
     render(){
+        console.log(this.state.error)
         return (
             <section id="login_section">
                 <form onSubmit={this.handleSubmit} id="login_form">
@@ -68,6 +70,7 @@ export default class LogIn extends React.Component{
                         <input id="password" type="password" onChange={this.handlePassword} value={this.state.password}></input>
 
                         <button type="submit" id="login_submit">Log In</button>
+                        {this.state.error ? <p id="login_error">{this.state.error}</p> : ''}
                     </fieldset>
                 </form>
             </section>

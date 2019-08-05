@@ -19,7 +19,7 @@ export default class Registration extends React.Component{
            city: '',
            state_region: '',
            zipcode: '',
-       
+           error: '' 
         }
     }
 
@@ -45,12 +45,25 @@ export default class Registration extends React.Component{
         this.setState({ passConfirm: e.target.value})
     }
 
+    handlePasswordLength = (e)=>{
+        if(e.length){
+            if(e.length > 3 && e.length < 8){
+                return <span className="reg_error">Password is too short, must be 8 characters long</span>
+            }
+
+            if(e.length >= 8){
+                return <span className="reg_error">Great!</span>
+            }
+        }
+        return '';
+    }
+
     handlePasswordMatch = ()=>{
         
         if(this.state.password.length > 5 && this.state.passConfirm.length > 5 && this.state.password === this.state.passConfirm){
-            return (<span className="correct_password">Great!</span>);
+            return (<span className="reg_error">Passwords match!</span>);
         } else{
-            return (<span className="incorrect_password">Passwords do not match.</span>);
+            return (<span className="reg_error">Passwords do not match.</span>);
         }
     
     }
@@ -107,7 +120,8 @@ export default class Registration extends React.Component{
             if(res){
                 this.props.history.push(`/login`)
             }
-        });
+        })
+        .catch(error => this.setState({ error: error.error}));
 
     }
 
@@ -129,13 +143,14 @@ export default class Registration extends React.Component{
                         <label htmlFor="reg_email">* Email:</label>
                         <input type="text" id="reg_email" onChange={this.handleEmail} value={this.state.email} required/>
 
-                        <label htmlFor="reg_password">* Enter a password: <span id="password_requirements">Password must contain one upper case, lower case, number and special character</span></label>
+                        <label htmlFor="reg_password">* Enter a password: <span id="password_requirements">Password must greater than 8 characters, contain one upper case, lower case, number and special character</span></label>
                         <input type="password" id="reg_password" onChange={this.handlePassword} value={this.state.password} required/>
+                        {this.state.password.length ? this.handlePasswordLength(this.state.password):  ''}
                         
                         <label htmlFor="re_password_confirm">* Retype password:
                         </label>
                         <input type="password" onChange={this.handlePasswordConfirmation} value={this.state.passConfirm} required></input>     
-                        {this.state.passConfirm.length < 5 ? '' : this.handlePasswordMatch()}
+                        {this.state.passConfirm.length < 8 ? '' : this.handlePasswordMatch()}
 
                         <label htmlFor="reg_home_number">Home Number:</label>
                         <input text="text" id="reg_phone_number" onChange={this.handleHomeNumber} value={this.state.home_number}></input>

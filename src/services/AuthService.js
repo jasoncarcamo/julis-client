@@ -9,7 +9,8 @@ const AuthService = {
             body: JSON.stringify({mobile_number, password})
         })
         .then( res => {
-            return !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+            return !res.ok ? res.json().then(e => {
+                return Promise.reject(e)}) : res.json()
         })
     },
     registerUser({first_name, last_name, email, password, home_number,  mobile_number, address, city, state_region, zipcode, id}){

@@ -33,13 +33,12 @@
     font-size: .8em; 
 }
 
-.correct_password{
+.reg_error{
     display: block;
-    margin: 2% 0 0 30%;
-}
-
-.incorrect_password{
-    display: block;
+    border: 1px solid black;
+    text-align: center;
+    width: 50%;
+    margin: 2% auto
 }
 
 #reg_submit{
