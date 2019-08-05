@@ -35,7 +35,6 @@
 
 .reg_error{
     display: block;
-    border: 1px solid black;
     text-align: center;
     width: 50%;
     margin: 2% auto
