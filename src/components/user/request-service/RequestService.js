@@ -124,7 +124,6 @@ export default class RequestService extends React.Component{
     
     
     render(){
-        console.log(this.state.time)
         return (
             <section id="req_section">
                 <form onSubmit={this.handleSubmit} id="req_form">

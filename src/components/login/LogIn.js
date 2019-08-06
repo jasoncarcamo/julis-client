@@ -58,7 +58,6 @@ export default class LogIn extends React.Component{
     }
 
     render(){
-        console.log(this.state.error)
         return (
             <section id="login_section">
                 <form onSubmit={this.handleSubmit} id="login_form">
