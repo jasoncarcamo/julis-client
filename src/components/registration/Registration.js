@@ -1,5 +1,6 @@
 import React from 'react';
 import AuthService from '../../services/AuthService';
+import {Link} from 'react-router-dom';
 import uuid4 from 'uuid/v4';
 import './registration.css';
 
@@ -45,19 +46,6 @@ export default class Registration extends React.Component{
         this.setState({ passConfirm: e.target.value})
     }
 
-    handlePasswordLength = (e)=>{
-        if(e.length){
-            if(e.length > 3 && e.length < 8){
-                return <span className="reg_error">Password is too short, must be 8 characters long</span>
-            }
-
-            if(e.length >= 8){
-                return <span className="reg_error">Great!</span>
-            }
-        }
-        return '';
-    }
-
     handlePasswordMatch = ()=>{
         
         if(this.state.password.length > 5 && this.state.passConfirm.length > 5 && this.state.password === this.state.passConfirm){
@@ -91,6 +79,25 @@ export default class Registration extends React.Component{
     handleZipCode = (e)=>{
         this.setState({ zipcode: e.target.value});
     }
+
+    
+    validatePassword = (password) => {
+        const REGEX_UPPER_LOWER_NUMBER_SPECIAL = (/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&])[\S]+/);
+
+        if (password.length < 8) {
+          return <span className="reg_error">Password be longer than 8 characters</span>
+        }
+        if (password.length > 72) {
+          return <span className="reg_error">Password be less than 72 characters</span>
+        }
+        if (password.startsWith(' ') || password.endsWith(' ')) {
+          return <span className="reg_error">Password must not start or end with empty spaces</span>
+        }
+        if (!REGEX_UPPER_LOWER_NUMBER_SPECIAL.test(password)) {
+          return <span className="reg_error">Password must contain one upper case, lower case, number and special character</span>
+        }
+        return <span className="reg_error">Looking good!</span>
+      }
 
 
     handleSubmit = (e)=>{
@@ -126,7 +133,6 @@ export default class Registration extends React.Component{
     }
 
     render(){
-    
         return (
             <section id="reg_section">
                 <form onSubmit={this.handleSubmit} id="reg_form">
@@ -143,9 +149,9 @@ export default class Registration extends React.Component{
                         <label htmlFor="reg_email">* Email:</label>
                         <input type="text" id="reg_email" onChange={this.handleEmail} value={this.state.email} required/>
 
-                        <label htmlFor="reg_password">* Enter a password: <span id="password_requirements">Password must greater than 8 characters, contain one upper case, lower case, number and special character</span></label>
+                        <label htmlFor="reg_password">* Enter a password:</label>
                         <input type="password" id="reg_password" onChange={this.handlePassword} value={this.state.password} required/>
-                        {this.state.password.length ? this.handlePasswordLength(this.state.password):  ''}
+                        {this.validatePassword(this.state.password)}
                         
                         <label htmlFor="re_password_confirm">* Retype password:
                         </label>
@@ -171,7 +177,9 @@ export default class Registration extends React.Component{
                         <input type="text" id="reg_zipcode" onChange={this.handleZipCode} value={this.state.zipcode} required/>
 
                         <button type="submit" id="reg_submit">Sign me up</button>
+                        {this.state.error ? <span className="reg_error">{this.state.error} <Link to="login">Log in</Link></span> : ''}
                     </fieldset>
+                    
                 </form>
             </section>
         )
