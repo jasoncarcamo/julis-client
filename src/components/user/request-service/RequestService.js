@@ -153,7 +153,7 @@ export default class RequestService extends React.Component{
                         <TimePicker id="req-time" onChange={this.handleBestTime} value={this.state.time} disableClock={true} format="hh:mm a" amPmAriaLabel="PM"/>
 
                         <label htmlFor="req_comments">Comments?</label>
-                        <textarea id="req_comments" onChange={this.handleComments} value={this.state.comments} placeholder="Any specail requests?"></textarea>
+                        <textarea id="req_comments" onChange={this.handleComments} value={this.state.comments} placeholder="Any special requests?"></textarea>
 
                         <button type="submit" id="req_submit">Go</button>
                     </fieldset>
