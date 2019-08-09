@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+.User-Link{
+    text-decoration: none;
+    color: #DB7093;
+}
+
 #user_section > div{
     display: flex;
     justify-content: space-evenly;
@@ -10,7 +15,9 @@
 
 
 #user_section > h1{
-    margin: 2% auto 5% 50%;
+    margin: 2% auto 4% 50%;
     width: 40%;
+    color: #DB7093;
     text-align: right;
+    font-size: 1.5em;
 }

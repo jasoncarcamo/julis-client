@@ -19,19 +19,23 @@ export default class ServiceList extends React.Component{
                    
                     <header className="hi">Date set for {formatDate(getTime(service.date_modified), 'MMM Do YYYY ')}{service.best_time_reached}</header>
 
-                    <p>{service.service_type}</p>
+                    <p>Service type: {service.service_type}</p>
 
-                    <p>{service.comments}</p>
+                    <p>Comments: {service.comments}</p>
 
-                    <Link to={`/user/editservice?id=${service.id}`}>Edit</Link>  
-                    
-                    {this.state.confirm ? (
                     <div>
-                        <button onClick={this.props.handleCancelService} className={service.id}>confirm</button> 
+                        <Link to={`/user/editservice?`} className="edit_button" id={service.id}>Edit</Link>  
                         
-                        <button className="cancel_confirm" onClick={()=> this.setState({confirm: false})}>Cancel</button>
-                    </div>) : <button type="button" className="cancel_confirm" onClick={() => this.setState({confirm: true})} >Cancel clean up</button>}     
-
+                        {this.state.confirm ? (
+                        <div>
+                            <button onClick={this.props.handleCancelService} className={service.id} >confirm</button> 
+                            
+                            <button className="cancel_confirm" onClick={()=> this.setState({confirm: false})}>Cancel</button>
+                        </div>) : (
+                        <div>
+                            <button type="button" className="cancel_confirm" onClick={() => this.setState({confirm: true})} >Cancel clean up</button>
+                        </div>)}     
+                    </div>
                 </li>)
     }
 }

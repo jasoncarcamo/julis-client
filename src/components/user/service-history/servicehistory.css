@@ -23,24 +23,60 @@
     width: 50%;
     margin: 3% auto;
     text-align: center;
-    border: 2px solid black;
+    border: 2px solid #DB7093;
+    color: #DB7093;
     box-shadow: .5em .5em .8em grey;
 }
 
 
 #service_header > ul li > header{
     margin: 2% auto;
-    font-weight: bold
+    font-weight: bolder;
 }
 
-#service_header > ul li button{
-    display: inline-block !important;
-    margin: 5% auto 1% auto;
+#service_header ul li > div{
+    display: grid;
+    justify-content: space-around;
+    width: 80%;
+    margin: 2% auto;
+    grid-template: 1fr / 1fr 1fr;
+    grid-gap: .4em;
+}
+
+#service_header ul li > div > div{
+    padding: 0;
+    margin: 0;
+}
+
+#service_header ul li > div > div button{    
+    border: 1px solid black;    
+    display: block !important;
+    text-decoration: none;
     width: 6em;
-    height: 3em;
+    height: auto;
+    padding-top: .3em;
+    background-color: #DB7093;
+    color: white;
+    margin: 5% 0 3% 0!important;
+}
+
+
+#service_header > ul li button{
+    display: block !important;
+    margin: 5% 0 1% 0;
+    font-size: 1em;
     border: 1px solid black;
 }
 
-.cancel_confirm{
-    margin: 5% auto 3% auto!important;
+.edit_button{   
+    border: 1px solid black;    
+    display: block !important;
+    text-decoration: none;
+    width: 4.5em;
+    height: 2em;
+    padding-top: .3em;
+    background-color: #DB7093;
+    color: white;
+    margin: 2% auto 3% auto !important; 
 }
+

@@ -1,6 +1,5 @@
 import React from 'react';
 import TokenService from '../../../services/TokenService';
-import {format as formatDate, getTime} from 'date-fns'
 import {Link} from 'react-router-dom';
 import './servicehistory.css';
 import ServiceList from './ServiceList';
@@ -35,9 +34,9 @@ export default class ServiceHistory extends React.Component{
 
     renderServices = (services)=>{
         if(services.length !==0 ){
-            return this.state.services.map( service => <ServiceList service={service} handleCancelService={this.handleCancelService}/>)
+            return this.state.services.map( service => <ServiceList key={service.id} service={service} handleCancelService={this.handleCancelService}/>)
         } else{
-            return <h1 className="no_service">You don't have any arranged services yet, click <Link to="/user/newservice">here</Link> to arrange your first service.</h1>
+            return <h1 className="no_service">You don't have any arranged services yet, click <Link to="/user/newservice" style={{color: '#DB7093'}}>here</Link> to arrange your first service.</h1>
         }
     }
 

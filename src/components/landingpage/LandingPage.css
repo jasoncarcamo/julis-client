@@ -48,10 +48,10 @@
     display: block;
     width: 9em;
     height: 5em;
-    border: 1px solid white !important;
-    margin: 4% auto 5% auto;
+    background-color: #DB7093 !important;
+    margin: 6% auto 5% auto;
     text-align: center;
-    padding: 1.4em 0 ;
+    padding: 1.6em 0 ;
     border: none;
     font-size: 1.1em;
     color: white;
@@ -74,6 +74,10 @@
     padding: 0;
     text-align: center;
     background-color: white;
+}
+
+#features_section section h3{
+    color: #DB7093;
 }
 
 #features_section section p{
@@ -127,9 +131,10 @@
     padding-top: 1em;
     width: 8em; 
     height: 3.5em;
+    background-color: #DB7093;
     border: 1px solid black;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 

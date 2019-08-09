@@ -80,8 +80,8 @@ class User extends React.Component{
                 <h1>Hello {this.state.first_name}</h1>
 
                 <div>
-                    <Link to={`/user/services`} className="Link">Service details</Link>
-                    <Link to={`/user/newservice`} className="Link">Arrange Clean Up</Link>
+                    <Link to={`/user/services`} className="User-Link">Service details</Link>
+                    <Link to={`/user/newservice`} className="User-Link">Arrange Clean Up</Link>
                 </div>
 
                 <Route exact path="/user" component={props => <ServiceHistory {...props} refresh={this.handleRefresh}/>}/>

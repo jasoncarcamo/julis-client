@@ -1,5 +1,6 @@
 .Link{
-    text-decoration: none;
+    text-decoration: none;    
+    color: white;
 }
 
 .Link:hover{
@@ -17,7 +18,7 @@
     display: flex;
     justify-content: space-between;
     border: 1px solid lightgrey;
-    background: white;
+    background: #DB7093;
 }
 
 #header-nav div{
@@ -26,7 +27,8 @@
 
 #logo-icon{
     width: 20%;
-    height: 75%;
+    height: 75%;    
+    color: white;
     text-decoration: none;
 }
 

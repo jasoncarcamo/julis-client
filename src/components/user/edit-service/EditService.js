@@ -42,7 +42,9 @@ class EditService extends React.Component{
         if(e.target.checked){
             
             newService = this.state.service_type + ',' + e.target.name;     
-            serviceArray = newService.split(',');      if(serviceArray[0] === ""){
+            serviceArray = newService.split(',');      
+            
+            if(serviceArray[0] === ""){
                 serviceArray.shift();                
             }
             
@@ -100,6 +102,8 @@ class EditService extends React.Component{
         }
         return newTime;
     }
+    
+    
     handlePrice = (e)=>{
         this.setState({ price: e.target.value})
     }
