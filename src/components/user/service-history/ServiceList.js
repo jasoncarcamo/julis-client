@@ -17,11 +17,11 @@ export default class ServiceList extends React.Component{
         return (
                 <li key={service.id}>
                    
-                    <header className="hi">Date set for {formatDate(getTime(service.date_modified), 'MMM Do YYYY ')}{service.best_time_reached}</header>
+                    <header style={{color: 'black'}}>Date set for {formatDate(getTime(service.date_modified), 'MMM Do YYYY ')}{service.best_time_reached}</header>
 
-                    <p>Service type: {service.service_type}</p>
+                    <p>Service type: <span style={{color: 'black'}}>{service.service_type}</span></p>
 
-                    <p>Comments: {service.comments}</p>
+                    <p>Comments: <span style={{color: 'black'}}>{service.comments}</span></p>
 
                     <div>
                         <Link to={`/user/editservice?`} className="edit_button" id={service.id}>Edit</Link>  

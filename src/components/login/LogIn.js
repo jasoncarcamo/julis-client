@@ -68,7 +68,7 @@ export default class LogIn extends React.Component{
                         <label htmlFor="password">Password:</label>
                         <input id="password" type="password" onChange={this.handlePassword} value={this.state.password}></input>
 
-                        <button type="submit" id="login_submit">Log In</button>
+                        <button type="submit" className="login_button" id="login_submit">Log In</button>
                         {this.state.error ? <p id="login_error">{this.state.error}</p> : ''}
                     </fieldset>
                 </form>

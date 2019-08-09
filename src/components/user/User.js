@@ -77,10 +77,10 @@ class User extends React.Component{
         return (
             <section id="user_section">
 
-                <h1>Hello {this.state.first_name}</h1>
+                <h1 style={{color: 'black'}}>Hello <span style={{color: '#DB7093'}}>{this.state.first_name}</span></h1>
 
                 <div>
-                    <Link to={`/user/services`} className="User-Link">Service details</Link>
+                    <Link to={`/user/services`} className="User-Link">My Services</Link>
                     <Link to={`/user/newservice`} className="User-Link">Arrange Clean Up</Link>
                 </div>
 

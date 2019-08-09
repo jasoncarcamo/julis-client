@@ -13,6 +13,7 @@
     width: 100%;
     text-align: left;
     padding: 0;
+    color: #DB7093;
 }
 
 #reg_form > fieldset > label{
@@ -37,14 +38,23 @@
     display: block;
     text-align: center;
     width: 50%;
-    margin: 2% auto
+    margin: 2% auto;
 }
 
 #reg_submit{
-    margin: 5% auto;
-    width: 6em;
-    height: 3em;
+    border: 1px solid black;    
+    display: block !important;
+    text-decoration: none;
+    width: 5em;
+    padding-top: .3em;
+    background-color: #DB7093;
+    color: white;
+    margin: 2% auto 3% auto !important; 
+    font-size: 1em;
 }
+
+
+
 
 @media screen and (max-width: 445px){
     #reg_form{

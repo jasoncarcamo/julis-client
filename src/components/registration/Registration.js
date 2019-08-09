@@ -48,8 +48,8 @@ export default class Registration extends React.Component{
 
     handlePasswordMatch = ()=>{
         
-        if(this.state.password.length > 5 && this.state.passConfirm.length > 5 && this.state.password === this.state.passConfirm){
-            return (<span className="reg_error">Passwords match!</span>);
+        if(this.state.password.length > 2 && this.state.passConfirm.length > 2 && this.state.password === this.state.passConfirm){
+            return (<span className="reg_error" style={{color: 'green'}}>Passwords match!</span>);
         } else{
             return (<span className="reg_error">Passwords do not match.</span>);
         }
@@ -85,18 +85,18 @@ export default class Registration extends React.Component{
         const REGEX_UPPER_LOWER_NUMBER_SPECIAL = (/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&])[\S]+/);
 
         if (password.length < 8) {
-          return <span className="reg_error">Password be longer than 8 characters</span>
+          return <span className="reg_error" style={{color: 'red'}}>Password must be longer than 8 characters</span>
         }
         if (password.length > 72) {
-          return <span className="reg_error">Password be less than 72 characters</span>
+          return <span className="reg_error" style={{color: 'orange'}}>Password must be less than 72 characters</span>
         }
         if (password.startsWith(' ') || password.endsWith(' ')) {
-          return <span className="reg_error">Password must not start or end with empty spaces</span>
+          return <span className="reg_error" style={{color: 'orange'}}>Password must not start or end with empty spaces</span>
         }
         if (!REGEX_UPPER_LOWER_NUMBER_SPECIAL.test(password)) {
-          return <span className="reg_error">Password must contain one upper case, lower case, number and special character</span>
+          return <span className="reg_error" style={{color: 'orange'}}>Password must contain one upper case, lower case, number and special character</span>
         }
-        return <span className="reg_error">Looking good!</span>
+        return <span className="reg_error" style={{color: 'green'}}>Looking good!</span>
       }
 
 
@@ -156,7 +156,7 @@ export default class Registration extends React.Component{
                         <label htmlFor="re_password_confirm">* Retype password:
                         </label>
                         <input type="password" onChange={this.handlePasswordConfirmation} value={this.state.passConfirm} required></input>     
-                        {this.state.passConfirm.length < 8 ? '' : this.handlePasswordMatch()}
+                        {this.state.passConfirm.length < 1 ? '' : this.handlePasswordMatch()}
 
                         <label htmlFor="reg_home_number">Home Number:</label>
                         <input text="text" id="reg_phone_number" onChange={this.handleHomeNumber} value={this.state.home_number}></input>
@@ -176,8 +176,8 @@ export default class Registration extends React.Component{
                         <label htmlFor="reg_zipcode">* Zip Code</label>
                         <input type="text" id="reg_zipcode" onChange={this.handleZipCode} value={this.state.zipcode} required/>
 
-                        <button type="submit" id="reg_submit">Sign me up</button>
-                        {this.state.error ? <span className="reg_error">{this.state.error} <Link to="login">Log in</Link></span> : ''}
+                        <button type="submit" className="signup_button" id="reg_submit">Sign me up</button>
+                        {this.state.error ? <span className="reg_error">{this.state.error} <Link to="login" >Log in</Link></span> : ''}
                     </fieldset>
                     
                 </form>

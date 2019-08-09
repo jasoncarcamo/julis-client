@@ -1,6 +1,7 @@
 #login_section{
     margin: 15% 0 10% 0;
     padding: 0;
+    color: #DB7093;
 }
 
 #login_form > fieldset{
@@ -25,6 +26,13 @@
     margin: 5% auto;
     width: 6em;
     height: 3em;
+    font-size: 1em;    
+    border: 1px solid black;    
+    display: block !important;
+    text-decoration: none;
+    padding-top: .3em;
+    background-color: #DB7093;
+    color: white;
 }
 
 #login_error{
