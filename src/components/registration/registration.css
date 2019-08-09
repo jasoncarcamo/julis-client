@@ -33,13 +33,11 @@
     font-size: .8em; 
 }
 
-.correct_password{
+.reg_error{
     display: block;
-    margin: 2% 0 0 30%;
-}
-
-.incorrect_password{
-    display: block;
+    text-align: center;
+    width: 50%;
+    margin: 2% auto
 }
 
 #reg_submit{
@@ -48,8 +46,9 @@
     height: 3em;
 }
 
-@media screen and (max-width: 750px){
+@media screen and (max-width: 445px){
     #reg_form{
         width: 90%;
+        margin-top: 35%;
     }
 }

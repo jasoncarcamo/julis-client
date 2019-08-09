@@ -4,7 +4,7 @@
     display: inline-block;
     width: 100%;
     padding: 0;
-    margin-top: 5%;
+    margin-top: 15%;
 }
 
 
@@ -14,43 +14,48 @@
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 90vh;
+    height: 100%;
     margin: 0;
     padding: 0;
     border: 1px solid lightgrey;
 }
 
 #first_section > header > h1{
-    color: white;
     font-size: 1.3em;
     font-weight: bold;
-    margin-left: 5%;
+    float: right;
+    margin-right: 5%;
     padding: 1.5%;
+    color: white;
 }
 
 #first_section > h2{
     font-size: 1.6em;
-    color: white;
-    margin: 15% 0 -2% 0;    
+    margin: 25% 0 -2% 0;    
     text-align: center;
+    color: white;
 }
 
 #first_section p{
     width: 60%;
     margin: 3% auto;
-    color: white;
     font-size: 1.1em;
     text-align: center;
+    color: white;
 }
 
-#first_section > button{
+#first_section a{
     display: block;
-    margin: 4% auto 0 auto;
-    padding: 1%;
-    background-color: pink;
+    width: 9em;
+    height: 5em;
+    background-color: #DB7093 !important;
+    margin: 6% auto 5% auto;
+    text-align: center;
+    padding: 1.6em 0 ;
     border: none;
-    color: white;
     font-size: 1.1em;
+    color: white;
+    text-decoration: none;
 }
 
 
@@ -65,31 +70,39 @@
     background-color: rgb(218, 218, 218);
 }
 
-#features_section section{
-    background-color: white;    
+#features_section section{ 
     padding: 0;
     text-align: center;
+    background-color: white;
+}
+
+#features_section section h3{
+    color: #DB7093;
 }
 
 #features_section section p{
     width: 80%;
-    margin: 10% auto 4% auto;
+    margin: 5% auto 4% auto;
     text-align: center;
 }
 
 #child_friendly img{
     width: 100%;
-    
+    height: 50%;
+}
+
+#clean_kitchen p{
+    width: 85%;
 }
 
 #clean_kitchen img {
     width: 100%;
-    height: 16em;
+    height: 20em;
 }
 
 #clean_office img{
     width: 100%;
-    height: 45%;
+    height: 50%;
 }
 
 /* living room section */
@@ -106,22 +119,40 @@
 #living_room_section p{
     width: 95%;
     height: 50%;
-    margin: auto;
     text-align: center;
-    padding: 6%;
+    margin: auto;
+    padding: 2.5em;
+}
+
+.to_signup{
+    display: block;
+    text-align: center;
+    margin: 7% auto 0 auto;
+    padding-top: 1em;
+    width: 8em; 
+    height: 3.5em;
+    background-color: #DB7093;
+    border: 1px solid black;
+    text-decoration: none;
+    color: white;
 }
 
 
 
-@media screen and (max-width: 750px ){
-  
+@media screen and (max-width: 445px ){
+  #homepage{
+      margin-top: 25%;
+  }
 /*first section*/  
-    #first_section{
-        height: 75vh;
-    }
 
-    #first_section button{
+#first_section{
+    height: 25em;
+}
+
+    #first_section a{
+        border: 1px solid black;
         margin-top: 10%;
+        padding-top: 6%;
     }
 
     /*features section*/
@@ -131,8 +162,15 @@
 
     #features_section section{
         width: 75%;
+        height: auto;
         margin: 0 auto;
     }
+
+
+    #clean_kitchen img{
+        height: 15em !important;
+    }
+    
 
 
     /*living room section */
@@ -141,10 +179,44 @@
     }
 
     #clean_living_room{
+        display: block;
         height: auto;
+        margin-bottom: -20%;
     }
 
     #living_room_section p{
-        margin: 5% auto 0 auto;
+        display: block;
+        width: 90%;
+        padding: .4em !important;
+        margin: 0 auto  ;
+    }
+
+    .to_signup{
+        padding-top: 3%;
+        margin-top: 25% !important;
+    }
+}
+
+@media only screen and (max-width: 770px) and (min-width: 446px){
+
+    #first_section{
+        height: 25em;
+    }
+
+    #features_section{
+        grid-template: auto auto auto / 1fr;
+    }
+
+    #features_section section img{
+        height: 50%;
+    }
+
+    #living_room_section p{
+        margin: 0 auto;
+        padding: 8%;
+    }
+
+    .to_signup{
+        margin-top: 10%;
     }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import AuthService from '../../services/AuthService';
+import {Link} from 'react-router-dom';
 import uuid4 from 'uuid/v4';
 import './registration.css';
 
@@ -19,7 +20,7 @@ export default class Registration extends React.Component{
            city: '',
            state_region: '',
            zipcode: '',
-       
+           error: '' 
         }
     }
 
@@ -48,9 +49,9 @@ export default class Registration extends React.Component{
     handlePasswordMatch = ()=>{
         
         if(this.state.password.length > 5 && this.state.passConfirm.length > 5 && this.state.password === this.state.passConfirm){
-            return (<span className="correct_password">Great!</span>);
+            return (<span className="reg_error">Passwords match!</span>);
         } else{
-            return (<span className="incorrect_password">Passwords do not match.</span>);
+            return (<span className="reg_error">Passwords do not match.</span>);
         }
     
     }
@@ -78,6 +79,25 @@ export default class Registration extends React.Component{
     handleZipCode = (e)=>{
         this.setState({ zipcode: e.target.value});
     }
+
+    
+    validatePassword = (password) => {
+        const REGEX_UPPER_LOWER_NUMBER_SPECIAL = (/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&])[\S]+/);
+
+        if (password.length < 8) {
+          return <span className="reg_error">Password be longer than 8 characters</span>
+        }
+        if (password.length > 72) {
+          return <span className="reg_error">Password be less than 72 characters</span>
+        }
+        if (password.startsWith(' ') || password.endsWith(' ')) {
+          return <span className="reg_error">Password must not start or end with empty spaces</span>
+        }
+        if (!REGEX_UPPER_LOWER_NUMBER_SPECIAL.test(password)) {
+          return <span className="reg_error">Password must contain one upper case, lower case, number and special character</span>
+        }
+        return <span className="reg_error">Looking good!</span>
+      }
 
 
     handleSubmit = (e)=>{
@@ -107,12 +127,12 @@ export default class Registration extends React.Component{
             if(res){
                 this.props.history.push(`/login`)
             }
-        });
+        })
+        .catch(error => this.setState({ error: error.error}));
 
     }
 
     render(){
-    
         return (
             <section id="reg_section">
                 <form onSubmit={this.handleSubmit} id="reg_form">
@@ -129,13 +149,14 @@ export default class Registration extends React.Component{
                         <label htmlFor="reg_email">* Email:</label>
                         <input type="text" id="reg_email" onChange={this.handleEmail} value={this.state.email} required/>
 
-                        <label htmlFor="reg_password">* Enter a password: <span id="password_requirements">Password must contain one upper case, lower case, number and special character</span></label>
+                        <label htmlFor="reg_password">* Enter a password:</label>
                         <input type="password" id="reg_password" onChange={this.handlePassword} value={this.state.password} required/>
+                        {this.validatePassword(this.state.password)}
                         
                         <label htmlFor="re_password_confirm">* Retype password:
                         </label>
                         <input type="password" onChange={this.handlePasswordConfirmation} value={this.state.passConfirm} required></input>     
-                        {this.state.passConfirm.length < 5 ? '' : this.handlePasswordMatch()}
+                        {this.state.passConfirm.length < 8 ? '' : this.handlePasswordMatch()}
 
                         <label htmlFor="reg_home_number">Home Number:</label>
                         <input text="text" id="reg_phone_number" onChange={this.handleHomeNumber} value={this.state.home_number}></input>
@@ -156,7 +177,9 @@ export default class Registration extends React.Component{
                         <input type="text" id="reg_zipcode" onChange={this.handleZipCode} value={this.state.zipcode} required/>
 
                         <button type="submit" id="reg_submit">Sign me up</button>
+                        {this.state.error ? <span className="reg_error">{this.state.error} <Link to="login">Log in</Link></span> : ''}
                     </fieldset>
+                    
                 </form>
             </section>
         )

@@ -108,7 +108,7 @@ export default class RequestService extends React.Component{
     handleSubmit = (e)=>{
         e.preventDefault();
         
-        fetch(`http://localhost:8000/user/service`, {
+        fetch(`https://fathomless-eyrie-65525.herokuapp.com/user/service`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -124,7 +124,6 @@ export default class RequestService extends React.Component{
     
     
     render(){
-        console.log(this.state.time)
         return (
             <section id="req_section">
                 <form onSubmit={this.handleSubmit} id="req_form">
@@ -154,7 +153,7 @@ export default class RequestService extends React.Component{
                         <TimePicker id="req-time" onChange={this.handleBestTime} value={this.state.time} disableClock={true} format="hh:mm a" amPmAriaLabel="PM"/>
 
                         <label htmlFor="req_comments">Comments?</label>
-                        <textarea id="req_comments" onChange={this.handleComments} value={this.state.comments} placeholder="Any specail requests?"></textarea>
+                        <textarea id="req_comments" onChange={this.handleComments} value={this.state.comments} placeholder="Any special requests?"></textarea>
 
                         <button type="submit" id="req_submit">Go</button>
                     </fieldset>

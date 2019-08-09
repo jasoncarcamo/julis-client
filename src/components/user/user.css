@@ -1,6 +1,11 @@
 #user_section{
-    margin: 17% 0 0 0;
+    margin: 20% 0 0 0;
     padding: 0;
+}
+
+.User-Link{
+    text-decoration: none;
+    color: #DB7093;
 }
 
 #user_section > div{
@@ -8,14 +13,11 @@
     justify-content: space-evenly;
 }
 
-#user_section > div *{
-    
-    color: pink;
-}
 
 #user_section > h1{
-    margin: 2% auto 5% 50%;
+    margin: 2% auto 4% 50%;
     width: 40%;
+    color: #DB7093;
     text-align: right;
-    color: pink;
+    font-size: 1.5em;
 }

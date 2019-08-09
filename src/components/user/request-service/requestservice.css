@@ -15,6 +15,7 @@
     justify-content: space-evenly;
     margin: 0 auto;
     padding: 0;
+    color: #DB7093; ;
 }
 
 #req_form > fieldset header{
@@ -58,7 +59,7 @@
     width: 100%;
     height: 50%;
     text-align: center;
-    color: rgb(4, 194, 4);
+    color: rgb(4, 194, 4) !important;
     padding: 0;
     margin: auto 0;
 }
@@ -73,25 +74,32 @@
 .react-date-picker{
     margin-left: 40%;
     width: 50%;
+    color: #DB7093;     
 }
 
 .react-time-picker{
     width: 20%;
     height: 2.8em;
     margin: 0 auto;
+    color: #DB7093; 
 }
 
 #req_comments{
     width: 60%;
     height: 12em;
-    margin: 0 auto 0 auto;
-    border: 1px solid black;
+    margin: 0 auto 0 auto;    
+    border: 1px solid #DB7093; 
+    color: #DB7093;
+    font-size: 1em;
 }
+
 
 #req_submit{
     margin: 2% auto;
     width: 6em;
     height: 3em;
+    color: white;
+    background-color: #DB7093;
     border: 1px solid black;
 }
 

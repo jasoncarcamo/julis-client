@@ -34,7 +34,7 @@ class User extends React.Component{
         
         if(UserService.getId()){
             
-            fetch(`http://localhost:8000/user/`, {
+            fetch(`https://fathomless-eyrie-65525.herokuapp.com/user/`, {
                 headers: {
                     'authorization': `bearer ${TokenService.getAuthToken()}`
                 }
@@ -80,11 +80,11 @@ class User extends React.Component{
                 <h1>Hello {this.state.first_name}</h1>
 
                 <div>
-                    <Link to={`/user/services`} className="Link">Service details</Link>
-                    <Link to={`/user/newservice`} className="Link">Arrange Clean Up</Link>
+                    <Link to={`/user/services`} className="User-Link">Service details</Link>
+                    <Link to={`/user/newservice`} className="User-Link">Arrange Clean Up</Link>
                 </div>
-                
 
+                <Route exact path="/user" component={props => <ServiceHistory {...props} refresh={this.handleRefresh}/>}/>
                 <Route exact path={`/user/services`} component={props => <ServiceHistory {...props} refresh={this.handleRefresh}/>}></Route>                
                 <Route exact path={`/user/newservice`} render={props => <RequestService {...props} user={UserService.getId()} refresh={this.handleRefresh}></RequestService> }></Route>
                 <Route path="/user/editservice" component={EditService}></Route>

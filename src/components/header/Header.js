@@ -39,7 +39,7 @@ export default class Header extends React.Component{
         return (
             <header>
                 <nav id="header-nav">
-                    <div><Link to="/" id="logo-icon">Julis Cleaning Service Inc.</Link></div>
+                    <div ><Link to="/" id="logo-icon">Julis Cleaning Service Inc.</Link></div>
 
                     {TokenService.hasAuthToken() ? this.renderLogOut() : this.renderLogIn()}
                 </nav>

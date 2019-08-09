@@ -42,7 +42,9 @@ class EditService extends React.Component{
         if(e.target.checked){
             
             newService = this.state.service_type + ',' + e.target.name;     
-            serviceArray = newService.split(',');      if(serviceArray[0] === ""){
+            serviceArray = newService.split(',');      
+            
+            if(serviceArray[0] === ""){
                 serviceArray.shift();                
             }
             
@@ -100,6 +102,8 @@ class EditService extends React.Component{
         }
         return newTime;
     }
+    
+    
     handlePrice = (e)=>{
         this.setState({ price: e.target.value})
     }
@@ -108,7 +112,7 @@ class EditService extends React.Component{
         
         e.preventDefault();
         const serviceId = queryString.parse(this.props.location.search);
-        fetch(`http://localhost:8000/user/service`, {
+        fetch(`https://fathomless-eyrie-65525.herokuapp.com/user/service`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
