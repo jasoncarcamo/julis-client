@@ -4,8 +4,7 @@
 }
 
 .Link:hover{
-    font-weight: bold;
-    font-size: 1.25em;
+    font-weight: bolder;
 }
 
 
@@ -25,20 +24,76 @@
     margin: auto 5%;
 }
 
+#header-nav ul li{
+    list-style: none;
+}
+
 #logo-icon{
     width: 20%;
     height: 75%;    
     color: white;
     text-decoration: none;
+    z-index: 3;
 }
 
 
-.header-links{    
+#header-links{    
     display: flex;
     justify-content: space-evenly;
     margin: auto 2%;
     width: 45%;    
+    z-index: 2;
 }
 
+
+@media screen and (max-width: 445px){
+    
+    #menu-icon{        
+        position: absolute;
+        top: .9em;
+        right: 0;
+        z-index: 4;
+        height: 100%;
+        width: 5em;
+        margin-right: 2em;
+    }
+
+    #menu-icon div{
+        background-color: white;
+        width: 2.2em;
+        margin: 5% auto !important;
+        height: .35em;
+    }
+
+    #header-links{
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: 0;
+        height: 100vh;
+        border: 1px solid black;
+        flex-direction: column;
+        width: 100vw !important;
+        background-color: #DB7093;
+        text-align: center;
+        font-size: 1.3em;
+    }
+
+    #header-nav div{
+        margin: auto 2%;
+        text-align: center;
+    }
+    
+    #header-nav ul{
+        width: 50%;
+    }
+    
+    #header-nav ul li{
+        margin-right: 15%;
+        list-style: none;
+        padding: .5em;
+    }
+}
 
 

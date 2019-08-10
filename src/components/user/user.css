@@ -22,3 +22,9 @@
     text-align: right;
     font-size: 1.5em;
 }
+
+@media screen and (max-width: 445px){
+    #user_section{
+        margin-top: 30%;
+    }
+}

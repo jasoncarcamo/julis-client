@@ -12,8 +12,10 @@
 
 #service_header > ul{
     display: flex;
+    padding: 0;
     flex-direction: column;
     justify-content: space-evenly;
+    margin: 0 auto;
 }
 
 #service_header > ul li{
@@ -78,5 +80,11 @@
     background-color: #DB7093;
     color: white;
     margin: 5% auto 3% auto !important; 
+}
+
+@media screen and (max-width: 445px){
+    #service_header > ul li{
+        width: 95%;
+    }
 }
 
