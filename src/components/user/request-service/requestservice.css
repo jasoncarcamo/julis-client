@@ -75,6 +75,7 @@
     margin-left: 40%;
     width: 50%;
     color: #DB7093;     
+    z-index: 0 !important;
 }
 
 .react-time-picker{
@@ -82,6 +83,7 @@
     height: 2.8em;
     margin: 0 auto;
     color: #DB7093; 
+    z-index: 0 !important;
 }
 
 #req_comments{
@@ -103,9 +105,21 @@
     border: 1px solid black;
 }
 
+@media screen and (max-width: 440px){
+    .react-date-picker{
+        margin-left: 20% !important;
+        width: 50%;
+        color: #DB7093;     
+    }
+    
+    .react-time-picker{
+        margin-left: 30% !important;
+        border: 1px solid black;
+        height: 2.8em;
+    }
+}
 
-
-@media screen and (max-width: 750px){
+@media screen and (min-width: 440px) and (max-width: 760px){
     .checkbox-grid div{
         display: inline-block;
         width: 100%;

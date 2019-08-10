@@ -33,7 +33,7 @@ export default class Header extends React.Component{
     renderLogOut = ()=>{
         return (
             <ul id="header-links">
-                <li><Link to="/user/services" className="Link">services</Link></li>
+                <li><Link to="/user/services" className="Link" onClick={this.closeMenu}>services</Link></li>
 
                 <li><Link to="/" onClick={this.handleLogOut} className="Link">Log Out</Link></li>
             </ul>
@@ -44,15 +44,34 @@ export default class Header extends React.Component{
         UserService.clearId();
         TokenService.clearAuthToken();
         this.props.history.push('/')
+        this.closeMenu()
     }
 
     handleMenuIcon = () => {
         const headerLinks = document.getElementById('header-links');
-    
+        const datePicker = document.getElementsByClassName('react-date-picker');
+        const timePicker = document.getElementsByClassName('react-time-picker');
+        console.log(datePicker[0], datePicker[0]);
         if(headerLinks.style.display !== "flex"){
-            headerLinks.style.display = "flex"
-        } else{
-            headerLinks.style.display = "none"
+
+            headerLinks.style.display = "flex";
+
+            if(datePicker[0] && timePicker[0]){                
+            datePicker[0].style.display = "none";
+            timePicker[0].style.display = "none";
+            } else{
+                return;
+            }
+        } else{            
+
+            headerLinks.style.display = "none";
+
+            if(datePicker[0] && timePicker[0]){                
+                datePicker[0].style.display = "none";
+                timePicker[0].style.display = "none";
+            } else {
+                return;
+            }
         };    
     }
 
@@ -67,7 +86,9 @@ export default class Header extends React.Component{
     }
 
     closeMenu = () =>{
-        const headerLinks = document.getElementById("header-links");
+        const headerLinks = document.getElementById("header-links");        
+        const datePicker = document.getElementsByClassName('react-date-picker');
+        const timePicker = document.getElementsByClassName('react-time-picker');
         if(headerLinks.style.display === "flex"){
             headerLinks.style.display = "none";
         }

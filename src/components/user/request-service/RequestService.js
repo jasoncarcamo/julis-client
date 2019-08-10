@@ -147,10 +147,10 @@ export default class RequestService extends React.Component{
 
                         <label htmlFor="req_days">When?
                         </label>
-                        <DatePicker value={this.state.date} onChange={this.handleDay} required/>
+                        <DatePicker className="react-date-picker" value={this.state.date} onChange={this.handleDay} required/>
 
                         <label htmlFor="req_time">Time:</label>
-                        <TimePicker id="req-time" onChange={this.handleBestTime} value={this.state.time} disableClock={true} format="hh:mm a" amPmAriaLabel="PM"/>
+                        <TimePicker id="req-time" className="react-time-picker" onChange={this.handleBestTime} value={this.state.time} disableClock={true} format="hh:mm a" amPmAriaLabel="PM"/>
 
                         <label htmlFor="req_comments">Comments?</label>
                         <textarea id="req_comments" onChange={this.handleComments} value={this.state.comments} placeholder="Any special requests?"></textarea>
