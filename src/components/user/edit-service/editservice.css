@@ -96,9 +96,11 @@
     border: 1px solid black;
 }
 
-
-
-
+@media screen and (max-width: 440px){
+    #edit_form > fieldset{
+        width: 95%;
+    }
+}
 
 @media screen and (max-width: 750px){
     .checkbox-grid div{
