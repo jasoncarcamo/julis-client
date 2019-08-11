@@ -1,14 +1,13 @@
 .Link{
     text-decoration: none;    
     color: white;
-    padding: 0;
+    padding: .3em;
     margin: 0;
 }
 
 .Link:hover{
     font-weight: bolder;
 }
-
 
 #header-nav {
     position: fixed;
@@ -50,11 +49,6 @@
     width: 35%;
     text-align: center;
     font-size: 1.1em !important;
-    padding: 0;
-    margin: 0;
-}
-
-#header-links li > *{
     padding: 0;
     margin: 0;
 }

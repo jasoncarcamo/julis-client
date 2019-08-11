@@ -1,6 +1,6 @@
 import React from 'react';
 import TokenService from '../../services/TokenService';
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import UserService from '../../services/UserService';
 import './header.css'
 
@@ -16,8 +16,8 @@ export default class Header extends React.Component{
     renderLogIn = ()=>{
         return (
             <ul id="header-links">
-                <Link to="/register" className="Link" onClick={this.closeMenu}>Sign Up</Link>
-                <Link to="/login" className="Link" onClick={this.closeMenu}> Log In</Link>
+                <li><Link to="/register" className="Link" onClick={this.closeMenu}>Sign Up</Link></li>
+                <li><Link to="/login" className="Link" onClick={this.closeMenu}> Log In</Link></li>
             </ul>
         )
     }
@@ -97,7 +97,7 @@ export default class Header extends React.Component{
         return (
             <header>
                 <nav id="header-nav">
-                    <div ><Link to="/" id="logo-icon">Julis Cleaning Service Inc.</Link></div>
+                    <div><NavLink to="/" id="logo-icon">Julis Cleaning Service Inc.</NavLink></div>
 
                     <div id="menu-icon" onClick={this.handleMenuIcon}>
                         <div></div>
