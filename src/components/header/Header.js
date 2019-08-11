@@ -51,7 +51,7 @@ export default class Header extends React.Component{
         const headerLinks = document.getElementById('header-links');
         const datePicker = document.getElementsByClassName('react-date-picker');
         const timePicker = document.getElementsByClassName('react-time-picker');
-        console.log(datePicker[0], datePicker[0]);
+
         if(headerLinks.style.display !== "flex"){
 
             headerLinks.style.display = "flex";
@@ -67,8 +67,8 @@ export default class Header extends React.Component{
             headerLinks.style.display = "none";
 
             if(datePicker[0] && timePicker[0]){                
-                datePicker[0].style.display = "none";
-                timePicker[0].style.display = "none";
+                datePicker[0].style.display = "block";
+                timePicker[0].style.display = "block";
             } else {
                 return;
             }
@@ -86,9 +86,7 @@ export default class Header extends React.Component{
     }
 
     closeMenu = () =>{
-        const headerLinks = document.getElementById("header-links");        
-        const datePicker = document.getElementsByClassName('react-date-picker');
-        const timePicker = document.getElementsByClassName('react-time-picker');
+        const headerLinks = document.getElementById("header-links");   
         if(headerLinks.style.display === "flex"){
             headerLinks.style.display = "none";
         }
