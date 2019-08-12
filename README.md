@@ -36,7 +36,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 # Julis cleaning service
 ## Live app: https://jason-juliscleaning-app.jasoncarcamo30.now.sh/
-A full-stack website created for a cleaning company.  
+#### A full-stack website created for a cleaning company.  
 
 ![ImageOfApp](./julisclient/landingpage.png)<br/>
 
