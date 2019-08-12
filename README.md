@@ -59,11 +59,12 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 # Live app: https://jason-juliscleaning-app.jasoncarcamo30.now.sh/
 A full-stack website created for a cleaning company.  
 
-![ImageOfApp](./rhymeMyApp.png)<br/>
+![ImageOfApp](./julis-client/landingpage.png)<br/>
 
-![ImageOfApp](./rhymeappword1.png)<br/>
+![ImageOfApp](./julis-client/landingpage2.png)<br/>
 
-![ImageOfApp](./rhymeappword2.png)<br/>
+![ImageOfApp](./julis-client/services.png)<br/>
+![ImageOfApp](./julis-client/signup.png)<br/>
 
 # Summary
 The starting template I used to create a website for a cleaning company. Features include creating an account, arranging services, and editing services.
