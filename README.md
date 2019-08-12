@@ -43,22 +43,6 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
 ### Deployment
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
@@ -66,3 +50,24 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+# Julis cleaning service
+# Live app: https://jason-juliscleaning-app.jasoncarcamo30.now.sh/
+A full-stack website created for a cleaning company.  
+
+![ImageOfApp](./rhymeMyApp.png)<br/>
+
+![ImageOfApp](./rhymeappword1.png)<br/>
+
+![ImageOfApp](./rhymeappword2.png)<br/>
+
+# Summary
+The starting template I used to create a website for a cleaning company. Features include creating an account, arranging services, and editing services.
+
+# Built with
+- Html
+- Css
+- React.js
+- PostgreSQL
+- TDD with mocha, Jest, and Enzyme
+
