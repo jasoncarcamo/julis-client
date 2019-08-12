@@ -67,7 +67,7 @@ A full-stack website created for a cleaning company.
 ![ImageOfApp](./julisclient/signup.png)<br/>
 
 # Summary
-The starting template I used to create a website for a cleaning company. Features include creating an account, arranging services, and editing services.
+The starting template I used to create a full stack website for a cleaning company. Features include a database for creating an account, arranging services, and editing services.
 
 # Built with
 - Html
