@@ -52,11 +52,6 @@ export default class LogIn extends React.Component{
         
     }
 
-    handleUser = (e)=>{
-        e.preventDefault();
-        
-    }
-
     render(){
         return (
             <section id="login_section">

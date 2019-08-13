@@ -24,7 +24,7 @@ export default class ServiceList extends React.Component{
                     <p>Comments: <span style={{color: 'black'}}>{service.comments}</span></p>
 
                     <div>
-                        <Link to={`/user/editservice?`} className="edit_button" id={service.id}>Edit</Link>  
+                        <Link to={`/user/editservice?id=${service.id}`} className="edit_button" id={service.id}>Edit</Link>  
                         
                         {this.state.confirm ? (
                         <div>
