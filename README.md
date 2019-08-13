@@ -49,8 +49,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 The starting template used to create a full stack website for a cleaning company. Features include endpoints for creating user accounts and complete control of creating, editing, and deleting services.
 
 ## For demo purposes you can use this account:
-  Mobile number: 11
-  Password: Password11! (case-sensitive)
+  Mobile number: 11<br/>
+  Password: Password11! (case-sensitive)<br/>
 
 ## Built with
 - Html
