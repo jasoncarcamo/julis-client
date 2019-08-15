@@ -33,6 +33,7 @@ export default class App extends React.Component {
         return (
             <section>
                 <section className="App">
+                    <img src={Favicon} alt="icon"/>
                     <Route path="/" component={Header}></Route>
                     <Route exact path="/" component={LandingPage}></Route>
                     <Route exact path="/login" render={props => <LogIn {...props}/>}></Route>  
