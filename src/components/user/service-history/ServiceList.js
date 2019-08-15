@@ -17,7 +17,7 @@ export default class ServiceList extends React.Component{
         return (
                 <li key={service.id}>
                    
-                    <header style={{color: 'black'}}>Date set for {formatDate(getTime(service.date_modified), 'MMM Do YYYY ')}{service.best_time_reached}</header>
+                    <header style={{color: 'black'}}>Date set for {formatDate(getTime(service.day), 'MMM Do YYYY ')}{service.best_time_reached}</header>
 
                     <p>Service type: <span style={{color: 'black'}}>{service.service_type}</span></p>
 

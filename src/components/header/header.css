@@ -16,6 +16,7 @@
     width: 100%;
     height: 4.5em;
     display: flex;
+    z-index: 6;
     justify-content: space-between;
     border: 1px solid lightgrey;
     background: #DB7093;

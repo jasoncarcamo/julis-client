@@ -37,7 +37,7 @@ export default class App extends React.Component {
 
        
         return (
-            <ApiContext.Provider value={value}>
+            <section>
                 <section className="App">
                     <Route path="/" component={Header}></Route>
                     <Route exact path="/" component={LandingPage}></Route>
@@ -50,7 +50,7 @@ export default class App extends React.Component {
                 <footer>
                     <p>Copyright Julis Cleaning Company, All rights reserved</p>
                 </footer>
-            </ApiContext.Provider>
+            </section>
         );
     }
 }

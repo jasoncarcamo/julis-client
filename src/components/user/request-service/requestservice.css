@@ -75,7 +75,7 @@
     margin-left: 40%;
     width: 50%;
     color: #DB7093;     
-    z-index: 0 !important;
+    z-index: 2 !important;
 }
 
 .react-time-picker{

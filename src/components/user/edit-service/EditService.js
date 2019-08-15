@@ -32,6 +32,38 @@ class EditService extends React.Component{
         }
     }
 
+    componentDidMount(){
+        
+        const serviceId = queryString.parse(this.props.location.search);
+        fetch(`https://fathomless-eyrie-65525.herokuapp.com/user/service?id=${serviceId.id}`, {
+            headers: {
+                "content-type": "application/json",
+                "authorization": `bearer ${tokenService.getAuthToken()}`
+            }
+        })
+        .then(res => res.json())
+        .then(resData => {
+            console.log(resData)
+            this.handleEditService(resData.services, serviceId.id);
+        });
+    }
+
+    handleEditService = (services, serviceId) =>{
+        const inputArray = document.getElementsByTagName("input");
+        const currentService = services.find(service => service.id === Number(serviceId));
+        let serviceArray;
+        if(currentService.service_type.includes(",")){
+            serviceArray = currentService.service_type.split(',');
+            for(let i = 0; i < serviceArray.length; i++){
+                inputArray[serviceArray[i]].click()
+                console.log(inputArray[serviceArray[i]])
+            }
+            console.log(serviceArray)
+        } else{
+            console.log('Bye')
+        }
+    }
+
     handleService= (e)=>{
         let newService;
         let newPrice;
