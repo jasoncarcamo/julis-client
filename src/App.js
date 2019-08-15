@@ -8,6 +8,7 @@ import Registration from './components/registration/Registration';
 import User from './components/user/User';
 import Verify from './components/verify/Verify';
 import ResendVerification from './components/verify/ResendVerificaton';
+import Favicon from './favicon.ico';
 
 
 
