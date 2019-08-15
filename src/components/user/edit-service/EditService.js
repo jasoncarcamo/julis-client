@@ -43,7 +43,6 @@ class EditService extends React.Component{
         })
         .then(res => res.json())
         .then(resData => {
-            console.log(resData)
             this.handleEditService(resData.services, serviceId.id);
         });
     }
@@ -56,11 +55,9 @@ class EditService extends React.Component{
             serviceArray = currentService.service_type.split(',');
             for(let i = 0; i < serviceArray.length; i++){
                 inputArray[serviceArray[i]].click()
-                console.log(inputArray[serviceArray[i]])
             }
-            console.log(serviceArray)
         } else{
-            console.log('Bye')
+            inputArray[currentService.service_type].click();
         }
     }
 

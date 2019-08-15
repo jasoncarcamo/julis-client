@@ -6,7 +6,6 @@ import LandingPage from './components/landingpage/LandingPage';
 import {Route} from 'react-router-dom';
 import Registration from './components/registration/Registration';
 import User from './components/user/User';
-import ApiContext from './apiContext/ApiContext';
 import Verify from './components/verify/Verify';
 import ResendVerification from './components/verify/ResendVerificaton';
 
@@ -29,13 +28,7 @@ export default class App extends React.Component {
     }
    
     
-    render(){
-        let value ={
-            id: this.state.id,
-            setId: this.handleAddId
-        }
-
-       
+    render(){       
         return (
             <section>
                 <section className="App">
