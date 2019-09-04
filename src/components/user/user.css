@@ -16,10 +16,10 @@
 
 
 #user_section > h1{
-    margin: 2% auto 4% 50%;
+    margin: 4em auto ;
     width: 40%;
     color: #DB7093;
-    text-align: right;
+    text-align: center;
     font-size: 1.5em;
 }
 

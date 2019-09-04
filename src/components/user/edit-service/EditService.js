@@ -26,7 +26,7 @@ class EditService extends React.Component{
             ],
             service_type: '',
             comments: '',
-            time: '',            
+            best_time_reached: '',            
             date: new Date(),
             price: '0.00'
         }
@@ -48,9 +48,11 @@ class EditService extends React.Component{
     }
 
     handleEditService = (services, serviceId) =>{
+        
         const inputArray = document.getElementsByTagName("input");
         const currentService = services.find(service => service.id === Number(serviceId));
         let serviceArray;
+
         if(currentService.service_type.includes(",")){
             serviceArray = currentService.service_type.split(',');
             for(let i = 0; i < serviceArray.length; i++){
@@ -59,6 +61,8 @@ class EditService extends React.Component{
         } else{
             inputArray[currentService.service_type].click();
         }
+
+        this.setState({ comments: currentService.comments, best_time_reached: this.convertTime(currentService.best_time_reached)})
     }
 
     handleService= (e)=>{
@@ -111,12 +115,34 @@ class EditService extends React.Component{
     }
 
     handleTime = (time)=>{
-        this.setState({time})
+        console.log(time)
+        this.setState({best_time_reached: time})
+    }
+
+    convertTime = (time)=>{
+        
+        let realTime = time.split("");
+
+        realTime.pop();
+        let day = realTime.pop();
+        realTime.pop();
+
+        realTime = realTime.join("");
+
+        realTime = realTime.split(":");
+        console.log(day);
+
+        if(day !== "A"){
+            console.log("Its pm");
+            realTime[0] = Number(realTime[0]) + 12;
+        }        
+
+        return realTime.join(":");
     }
 
     formatTime = ()=>{
         let newTime;
-        const arr = this.state.time.split(':');
+        const arr = this.state.best_time_reached.split(':');
         if(arr[0] > 12){
             arr[0] = arr[0] - 12 ;
             newTime = arr.join(':') + ' PM';
@@ -153,7 +179,6 @@ class EditService extends React.Component{
     }
 
     render(){
-
         return (
             <section id="edit_section">
                 <form onSubmit={this.handleSubmit} id="edit_form">
@@ -178,7 +203,7 @@ class EditService extends React.Component{
 
                         <label htmlFor="edit_time">Time:
                         </label>
-                        <TimePicker id="edit_time" onChange={this.handleTime} value={this.state.time} disableClock={true} />
+                        <TimePicker id="edit_time" onChange={this.handleTime} value={this.state.best_time_reached} disableClock={true} />
 
                         <label htmlFor="edit_comments">Comments
                         ?</label>

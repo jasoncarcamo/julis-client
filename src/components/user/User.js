@@ -32,7 +32,7 @@ class User extends React.Component{
 
     componentDidMount(){
         
-        if(UserService.getId()){
+        if(TokenService.hasAuthToken()){
             
             fetch(`https://fathomless-eyrie-65525.herokuapp.com/user/`, {
                 headers: {

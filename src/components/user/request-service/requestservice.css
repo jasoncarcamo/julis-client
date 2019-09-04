@@ -41,11 +41,13 @@
     grid-gap: 1%;
     padding: 2%;
     margin: 1% 0 10% 0;
+    font-size: 1em;
 }
 
 .checkbox-grid div{
     display: inline-block;
     width: 100%;
+    font-size: 1em;
 }
 
 .checkbox-grid > div label{
@@ -98,12 +100,12 @@
 
 #req_submit{
     margin: 2% auto;
-    width: 6em;
+    width: 5em;
     height: 3em;
     color: white;
     background-color: #DB7093;
     border: 1px solid black;
-    font-size: 1.1em;
+    font-size: 1.4em;
 }
 
 @media screen and (max-width: 440px){

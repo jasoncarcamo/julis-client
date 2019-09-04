@@ -89,12 +89,12 @@
 
 #edit_submit{
     margin: 3% auto;
-    width: 6em;
+    width: 5em;
     height: 3em;    
     color: white;
     background-color: #DB7093;
     border: 1px solid black;
-    font-size: 1.1em;
+    font-size: 1.4em;
 }
 
 @media screen and (max-width: 440px){

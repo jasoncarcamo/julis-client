@@ -40,9 +40,9 @@ export default class LogIn extends React.Component{
                 this.setState({ error: resData.error})
             }
             if(resData.verified){
+                
                 TokenService.saveAuthToken(resData.authToken);
-                UserService.saveId(resData.id)
-                this.props.history.push(`/user/`)
+                this.props.history.push("/user")
             } else{
                 this.props.history.push(`api/resend?token=${resData.authToken}`)
             }
