@@ -115,14 +115,14 @@ class EditService extends React.Component{
     }
 
     handleTime = (time)=>{
-        console.log(time)
+        
         this.setState({best_time_reached: time})
     }
 
     convertTime = (time)=>{
         
         let realTime = time.split("");
-
+        
         realTime.pop();
         let day = realTime.pop();
         realTime.pop();
@@ -130,12 +130,13 @@ class EditService extends React.Component{
         realTime = realTime.join("");
 
         realTime = realTime.split(":");
-        console.log(day);
-
-        if(day !== "A"){
-            console.log("Its pm");
+        
+        if(day !== "A" && realTime[0] !== "12" ){
             realTime[0] = Number(realTime[0]) + 12;
-        }        
+            
+        } else if(day === "A" && realTime[0] === "12"){
+            realTime[0] = "00";
+        };       
 
         return realTime.join(":");
     }
