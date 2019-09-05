@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Login/> create snapshot for login component 1`] = `
+<section
+  id="login_section"
+>
+  <form
+    id="login_form"
+    onSubmit={[Function]}
+  >
+    <fieldset>
+      <label
+        htmlFor="user_name"
+      >
+        Mobile Number:
+      </label>
+      <input
+        id="user_name"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+      <label
+        htmlFor="password"
+      >
+        Password:
+      </label>
+      <input
+        id="password"
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+      <button
+        className="login_button"
+        id="login_submit"
+        type="submit"
+      >
+        Log In
+      </button>
+      
+    </fieldset>
+  </form>
+</section>
+`;

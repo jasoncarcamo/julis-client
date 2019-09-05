@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LandingPage/> create snapshot for landing page component 1`] = `
+<section
+  id="homepage"
+>
+  <section
+    id="first_section"
+  >
+    <header>
+      <h1>
+        Julis Cleaning Service
+      </h1>
+    </header>
+    <h2>
+      Quality Service at an Affordable Price
+    </h2>
+    <p>
+      Commercial & Industrial Sanitation Professionals
+    </p>
+    <a
+      href="#child_friendly"
+    >
+      About Us
+    </a>
+  </section>
+  <section
+    id="features_section"
+  >
+    <section
+      id="child_friendly"
+    >
+      <img
+        alt="A clean baby crib."
+        src="clean_crib.jpg"
+      />
+      <h3>
+        Green Friendly
+      </h3>
+      <p>
+        We use environmentally-conscious products that are safe for people and pets.
+      </p>
+    </section>
+    <section
+      id="clean_kitchen"
+    >
+      <img
+        alt="A clean kitchen"
+        src="clean_kitchen.jpg"
+      />
+      <h3>
+        Residential and Commercial cleaning
+      </h3>
+      <p>
+        From deep cleaning your kitchen and bathrooms to changing your bed linens, we are dedicated to creating clean, safe and healthy environments for both commercial and residential spaces.
+      </p>
+    </section>
+    <section
+      id="clean_office"
+    >
+      <img
+        alt="A clean office"
+        src="clean_office.jpg"
+      />
+      <h3>
+        Customer satisfaction
+      </h3>
+      <p>
+        Whether you need weekly, every other week, monthly, or occasional housekeeping services, our professionals will leave you feeling comfortable in and proud of your space.
+      </p>
+    </section>
+  </section>
+  <section
+    id="living_room_section"
+  >
+    <img
+      alt="A clean living room."
+      id="clean_living_room"
+      src="clean_living_room.jpg"
+    />
+    <span>
+      <p>
+        Coming home after a long day to a place that’s clean, orderly, and welcoming does not have to be a fantasy. That’s why we take the time to offer services that work with your budget, cleaning preferences, and busy lifestyle.  
+      </p>
+      <p>
+        Our friendly professionals strive to earn your loyalty every time we clean, which is why we make setting up house cleaning services as easy as can be. Whether you are looking to request services one time or create a routine cleaning plan, you'll never have to worry about signing a contract.
+      </p>
+    </span>
+  </section>
+  <section
+    id="landing_sign_up"
+  >
+    <a
+      className="to_signup"
+      href="/register"
+      onClick={[Function]}
+    >
+      Get Started
+    </a>
+  </section>
+</section>
+`;

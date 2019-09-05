@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header/> Create snapshot for header component 1`] = `
+<header>
+  <nav
+    id="header-nav"
+  >
+    <div>
+      <a
+        aria-current="page"
+        className="active"
+        href="/"
+        id="logo-icon"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        Julis Cleaning Service Inc.
+      </a>
+    </div>
+    <div
+      id="menu-icon"
+      onClick={[Function]}
+    >
+      <div />
+      <div />
+      <div />
+    </div>
+    <ul
+      id="header-links"
+    >
+      <li>
+        <a
+          className="Link"
+          href="/register"
+          onClick={[Function]}
+        >
+          Sign Up
+        </a>
+      </li>
+      <li>
+        <a
+          className="Link"
+          href="/login"
+          onClick={[Function]}
+        >
+           Log In
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+`;
