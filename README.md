@@ -7,8 +7,8 @@ A web app for a cleaning service company. This web app also has its own RESTful 
 
 ## Api url: https://fathomless-eyrie-65525.herokuapp.com
 For demo purposes you can use:
-  Mobile number: 11
-  Password: Password11!
+- Mobile number: 11
+- Password: Password11!
 
 ![Julis landing page](/julis-screenshots/landingpage.png)<br/>
 ![Julis landing page](/julis-screenshots/landingpage2.png)<br/> 
