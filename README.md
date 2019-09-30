@@ -1,11 +1,17 @@
 # Julis cleaning company
 
-#### Url: https://jason-juliscleaning-app.jasoncarcamo30.now.sh
+#### Client url: https://jason-juliscleaning-app.jasoncarcamo30.now.sh
 
-![Julis landing page](/julis-screenshots/Landingpage.png)
-![Julis landing page](/julis-screenshots/Landingpage2.png)
-![Julis landing page](/julis-screenshots/services.png)
-![Julis landing page](/julis-screenshots/signup.png)
+## Description
+A web app for a cleaning service company. This web app also has its own RESTful Api to access from a private database. 
+
+## Api url: https://fathomless-eyrie-65525.herokuapp.com
+
+
+![Julis landing page](/julis-screenshots/landingpage.png)<br/>
+![Julis landing page](/julis-screenshots/landingpage2.png)<br/> 
+![Julis landing page](/julis-screenshots/services.png)<br/>
+![Julis landing page](/julis-screenshots/signup.png)<br/>
 
 ## Summary
 Julis cleaning company lets you quickly and easliy arrange cleaning services. You can edit and cancel arranged service. You can also see past services.
