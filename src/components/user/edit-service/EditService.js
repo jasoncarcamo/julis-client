@@ -16,7 +16,7 @@ class EditService extends React.Component{
                     price: '20.00'
                 },
                 {
-                    name: 'Refridgerator',
+                    name: 'Refrigerator',
                     price: '20.00'
                 },
                 {

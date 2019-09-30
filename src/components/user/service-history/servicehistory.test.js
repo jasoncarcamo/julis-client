@@ -20,7 +20,7 @@ describe('<ServiceHistory/>', ()=>{
                 day: "2019-07-27T04:45:41.893Z",
                 id: 105,
                 price: "40",
-                service_type: "Refridgerator, Windows",
+                service_type: "Refrigerator, Windows",
                 user_id: "40488d95-ce3b",
             },
             {
@@ -42,7 +42,7 @@ describe('<ServiceHistory/>', ()=>{
                 day: "2019-07-27T04:58:01.665Z",
                 id: 106,
                 price: "70",
-                service_type: "Windows,  Refridgerator, Walls",
+                service_type: "Windows,  Refrigerator, Walls",
                 user_id: "40488d95-ce3b",
             }
         ]

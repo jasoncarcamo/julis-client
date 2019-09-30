@@ -31,16 +31,16 @@ exports[`<EditService/> create snapshot for EditService component 1`] = `
             Windows
           </label>
           <label
-            htmlFor="edit_Refridgerator"
+            htmlFor="edit_Refrigerator"
           >
             <input
-              id="edit_Refridgerator"
-              name="Refridgerator"
+              id="edit_Refrigerator"
+              name="Refrigerator"
               onChange={[Function]}
               type="checkbox"
               value="20.00"
             />
-            Refridgerator
+            Refrigerator
           </label>
           <label
             htmlFor="edit_Walls"
