@@ -3,7 +3,7 @@
 #### Client url: https://jason-juliscleaning-app.jasoncarcamo30.now.sh
 
 ## Description
-A web app for a cleaning service company. This web app also has its own RESTful Api to access from a private database. 
+A web app for a cleaning service company with its own database. Api provided to interac with database.
 
 ## Api url: https://fathomless-eyrie-65525.herokuapp.com
 For demo purposes you can use:
