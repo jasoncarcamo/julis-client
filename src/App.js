@@ -37,7 +37,7 @@ export default class App extends React.Component {
                     <Route path="/user/" render={props => <User {...props} user={this.state.id} refresh={this.goToLogin}/>}></Route>
                 </section>
                 <footer>
-                    <p><span class="copyright">&copy;</span> Julis Cleaning Company, All rights reserved</p>
+                    <p><span className="copyright">&copy;</span> Julis Cleaning Company, All rights reserved</p>
                 </footer>
             </section>
         );
