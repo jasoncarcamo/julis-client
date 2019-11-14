@@ -16,7 +16,8 @@
     justify-content: space-evenly;
     margin: 0 auto;
     padding: 0;
-    color: #DB7093;
+    color: rgb(253, 127, 169);
+    background-color: white;
 }
 
 #edit_form > fieldset header{
@@ -79,8 +80,8 @@
     width: 60%;
     height: 12em;
     margin: 0 auto 0 auto;
-    border: 1px solid #DB7093; 
-    color: #DB7093;
+    border: 1px solid rgb(253, 127, 169); 
+    color: rgb(253, 127, 169);
     font-size: 1em;
 }
 
@@ -92,7 +93,7 @@
     width: 5em;
     height: 3em;    
     color: white;
-    background-color: #DB7093;
+    background-color: rgb(253, 127, 169);
     border: 1px solid black;
     font-size: 1.4em;
 }

@@ -5,7 +5,7 @@
 
 .User-Link{
     text-decoration: none;
-    color: #DB7093;
+    color: rgb(253, 127, 169);
     font-size: 1.1em;
 }
 
@@ -18,7 +18,7 @@
 #user_section > h1{
     margin: 4em auto ;
     width: 40%;
-    color: #DB7093;
+    color: rgb(253, 127, 169);
     text-align: center;
     font-size: 1.5em;
 }

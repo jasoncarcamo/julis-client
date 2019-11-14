@@ -168,6 +168,7 @@ class EditService extends React.Component{
         
         e.preventDefault();
         const serviceId = queryString.parse(this.props.location.search);
+
         fetch(`https://fathomless-eyrie-65525.herokuapp.com/user/service`, {
             method: 'PATCH',
             headers: {
@@ -175,8 +176,9 @@ class EditService extends React.Component{
                 'authorization': `bearer ${tokenService.getAuthToken()}`
             },
             body: JSON.stringify({service_type: this.state.service_type, comments: this.state.comments, day: this.state.date, best_time_reached: `${this.formatTime()}`, price: this.state.price, id: serviceId.id, date_modified: new Date()})
-        })
-        this.props.history.push('/user/services')
+        });
+
+        this.props.history.push('/user/services');
     }
 
     render(){

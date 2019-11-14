@@ -77,7 +77,7 @@ class User extends React.Component{
         return (
             <section id="user_section">
 
-                <h1 style={{color: 'black'}}>Hello <span style={{color: '#DB7093'}}>{this.state.first_name}</span></h1>
+                <h1 style={{color: 'black'}}>Hello <span style={{color: 'rgb(253, 127, 169)'}}>{this.state.first_name}</span></h1>
 
                 <div>
                     <Link to={`/user/services`} className="User-Link">My Services</Link>

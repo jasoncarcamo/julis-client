@@ -132,49 +132,92 @@ export default class Registration extends React.Component{
 
     }
 
+    renderInputs = ()=>{
+        let inputs = [
+            (<>
+                <label htmlFor="reg_first_name">* First Name:
+                    <input type="text" id="reg_first_name" onChange={this.handleFirstName} value={this.state.first_name} required/>
+                </label>
+            </>),
+            (
+                <>
+                <label htmlFor="reg_last_name">* Last Name:
+                    <input type="text" id="reg_last_name" onChange={this.handleLastName} value={this.state.last_name} required/>
+                </label>
+                </>
+            ),
+            (
+                <>
+                <label htmlFor="reg_email">* Email:</label>
+                <input type="text" id="reg_email" onChange={this.handleEmail} value={this.state.email} required/>
+                </>
+            ),
+            (
+                <>
+                <label htmlFor="reg_password">* Enter a password:</label>
+                <input type="password" id="reg_password" onChange={this.handlePassword} value={this.state.password} required/>
+                {this.validatePassword(this.state.password)}
+                </>
+            ),
+            (
+                <>
+                <label htmlFor="re_password_confirm">* Retype password:
+                </label>
+                <input type="password" onChange={this.handlePasswordConfirmation} value={this.state.passConfirm} required></input>     
+                {this.state.passConfirm.length < 1 ? '' : this.handlePasswordMatch()}
+                </>
+            ),            
+            (
+                <>
+                    <label htmlFor="reg_home_number">Home Number:</label>
+                    <input text="text" id="reg_phone_number" onChange={this.handleHomeNumber} value={this.state.home_number}></input>
+                </>
+            ),
+            (
+                <>
+                    <label htmlFor="reg_mobile_number">* Mobile Number:</label>
+                    <input type="text" id="reg_mobile_number" onChange={this.handleMobileNumber} value={this.state.mobile_number} required/> 
+                </>
+            ),
+            (
+                <>
+                    <label htmlFor="reg_address">* Address:</label>
+                    <input type="text" id="reg_address" onChange={this.handleAddress} value={this.state.address}/>
+                </>
+            ),
+            (
+                <>
+                    <label htmlFor="reg_city">* City:</label>
+                    <input type="text" id="reg_city" onChange={this.handleCity} value={this.state.city} required/>
+                </>
+            ),
+            (
+                <>
+                    <label htmlFor="reg_state">* State Region:</label>
+                    <input type="text" id="reg_state" onChange={this.handleStateRegion} value={this.state.state_region} required/>
+                </>
+            ),           
+            (
+                <>
+                <label htmlFor="reg_zipcode">* Zip Code</label>
+                <input type="text" id="reg_zipcode" onChange={this.handleZipCode} value={this.state.zipcode} required/>
+                </>
+            
+            )
+
+
+        ];
+
+        return inputs;
+    }
+
     render(){
         return (
             <section id="reg_section">
                 <form onSubmit={this.handleSubmit} id="reg_form">
                     <fieldset>
                     
-
-                        <label htmlFor="reg_first_name">* First Name:</label>
-                        <input type="text" id="reg_first_name" onChange={this.handleFirstName} value={this.state.first_name} required/>
-
-                        <label htmlFor="reg_last_name">* Last Name:</label>
-                        <input type="text" id="reg_last_name" onChange={this.handleLastName} value={this.state.last_name} required/>
-
-
-                        <label htmlFor="reg_email">* Email:</label>
-                        <input type="text" id="reg_email" onChange={this.handleEmail} value={this.state.email} required/>
-
-                        <label htmlFor="reg_password">* Enter a password:</label>
-                        <input type="password" id="reg_password" onChange={this.handlePassword} value={this.state.password} required/>
-                        {this.validatePassword(this.state.password)}
-                        
-                        <label htmlFor="re_password_confirm">* Retype password:
-                        </label>
-                        <input type="password" onChange={this.handlePasswordConfirmation} value={this.state.passConfirm} required></input>     
-                        {this.state.passConfirm.length < 1 ? '' : this.handlePasswordMatch()}
-
-                        <label htmlFor="reg_home_number">Home Number:</label>
-                        <input text="text" id="reg_phone_number" onChange={this.handleHomeNumber} value={this.state.home_number}></input>
-
-                        <label htmlFor="reg_mobile_number">* Mobile Number:</label>
-                        <input type="text" id="reg_mobile_number" onChange={this.handleMobileNumber} value={this.state.mobile_number} required/> 
-
-                        <label htmlFor="reg_address">* Address:</label>
-                        <input type="text" id="reg_address" onChange={this.handleAddress} value={this.state.address}/>
-
-                        <label htmlFor="reg_city">* City:</label>
-                        <input type="text" id="reg_city" onChange={this.handleCity} value={this.state.city} required/>
-
-                        <label htmlFor="reg_state">* State Region:</label>
-                        <input type="text" id="reg_state" onChange={this.handleStateRegion} value={this.state.state_region} required/>
-
-                        <label htmlFor="reg_zipcode">* Zip Code</label>
-                        <input type="text" id="reg_zipcode" onChange={this.handleZipCode} value={this.state.zipcode} required/>
+                        {this.renderInputs()}
 
                         <button type="submit" className="signup_button" id="reg_submit">Sign me up</button>
                         {this.state.error ? <span className="reg_error">{this.state.error} <Link to="login" >Log in</Link></span> : ''}

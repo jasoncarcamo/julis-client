@@ -15,7 +15,7 @@ exports[`<User/> create snapshot for User component 1`] = `
     <span
       style={
         Object {
-          "color": "#DB7093",
+          "color": "rgb(253, 127, 169)",
         }
       }
     >

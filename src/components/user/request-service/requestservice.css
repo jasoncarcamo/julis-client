@@ -15,7 +15,8 @@
     justify-content: space-evenly;
     margin: 0 auto;
     padding: 0;
-    color: #DB7093; ;
+    color: rgb(253, 127, 169); ;
+    background-color: white;
 }
 
 #req_form > fieldset header{
@@ -76,7 +77,7 @@
 .react-date-picker{
     margin-left: 40%;
     width: 50%;
-    color: #DB7093;     
+    color: rgb(253, 127, 169);     
     z-index: 2 !important;
 }
 
@@ -84,7 +85,7 @@
     width: 20%;
     height: 2.8em;
     margin: 0 auto;
-    color: #DB7093; 
+    color: rgb(253, 127, 169); 
     z-index: 0 !important;
 }
 
@@ -92,8 +93,8 @@
     width: 60%;
     height: 12em;
     margin: 0 auto 0 auto;    
-    border: 1px solid #DB7093; 
-    color: #DB7093;
+    border: 1px solid rgb(253, 127, 169); 
+    color: rgb(253, 127, 169);
     font-size: 1em;
 }
 
@@ -103,7 +104,7 @@
     width: 5em;
     height: 3em;
     color: white;
-    background-color: #DB7093;
+    background-color: rgb(253, 127, 169);
     border: 1px solid black;
     font-size: 1.4em;
 }
@@ -116,7 +117,7 @@
     .react-date-picker{
         margin-left: 20% !important;
         width: 50%;
-        color: #DB7093;     
+        color: rgb(253, 127, 169);     
     }
     
     .react-time-picker{

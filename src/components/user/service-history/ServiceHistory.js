@@ -36,7 +36,7 @@ export default class ServiceHistory extends React.Component{
         if(services.length !==0 ){
             return this.state.services.map( service => <ServiceList key={service.id} service={service} handleCancelService={this.handleCancelService}/>)
         } else{
-            return <h1 className="no_service">You don't have any arranged services yet, click <Link to="/user/newservice" style={{color: '#DB7093'}}>here</Link> to arrange your first service.</h1>
+            return <h1 className="no_service">You don't have any arranged services yet, click <Link to="/user/newservice" style={{color: 'rgb(253, 127, 169)'}}>here</Link> to arrange your first service.</h1>
         }
     }
 

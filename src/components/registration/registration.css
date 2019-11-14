@@ -1,33 +1,41 @@
 
 #reg_form{
     display: block;
-    width: 50%;
-    margin: 10% auto;
+    width: 25em;
+    margin: 7em auto 3em auto;
+    background-color: white;
 }
 
 #reg_form > fieldset {    
-    display: flex;
+    display: grid !important;
+    grid-template: 1fr 1fr / 1fr 1fr 1fr;
     flex-direction: column;
-    font-size: 1.1em;
+    font-size: 1em;
     margin: 0;
     width: 100%;
     text-align: left;
     padding: 0;
-    color: #DB7093;
+    color: rgb(253, 127, 169);
+    border: none;
 }
 
 #reg_form > fieldset > label{
     display: block;
     margin: 8% auto 0 auto;
-    width: 55%;
+    width: 11em;
 }
 
-#reg_form > fieldset > input{
+#reg_form > fieldset input{
     display: block;
     margin: 0 auto 0 auto;
-    width: 55%;
+    width: 15em;
     height: 2em;
     padding: 1em;
+    border: .06em solid rgb(70, 203, 255);
+}
+
+#reg_form > fieldset > input:focus{
+    box-shadow: 0em 0 .5em rgb(64, 124, 255);
 }
 
 #password_requirements{
@@ -42,23 +50,20 @@
 }
 
 #reg_submit{
-    border: 1px solid black;    
     display: block !important;
     text-decoration: none;
     width: 5em;
     padding-top: .3em;
-    background-color: #DB7093;
+    background-color: rgb(253, 127, 169);
     color: white;
     margin: 2% auto 3% auto !important; 
     font-size: 1em;
 }
 
 
+@media screen and (max-width: 770px){
 
-
-@media screen and (max-width: 445px){
     #reg_form{
-        width: 90%;
-        margin-top: 35%;
+        width: 80%;
     }
 }
