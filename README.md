@@ -1,9 +1,9 @@
 # Julis cleaning company
 
-#### Client url: https://jason-juliscleaning-app.jasoncarcamo30.now.sh
+#### Live url: https://jason-juliscleaning-app.jasoncarcamo30.now.sh
 
 ## Description
-A web app for a cleaning service company. This web app also has its own RESTful Api to access from a private database. 
+A web app for a cleaning service company with its own database. Api provided to interact with the database.
 
 ## Api url: https://fathomless-eyrie-65525.herokuapp.com
 For demo purposes you can use:
@@ -22,4 +22,4 @@ Julis cleaning company lets you quickly and easliy arrange cleaning services. Yo
 - Html
 - Css
 - React.js
-TDD with mocha, Jest, and Enzyme
+- TDD with mocha, Jest, and Enzyme
